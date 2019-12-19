@@ -24,3 +24,4 @@ yarn-error.log*
 
 #documents
 *.pdf
+yarn_instructions.md
