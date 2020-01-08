@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+@import '../../styles/configs';
+
+.formHeaderContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formHeaderTitle {
+  @include header5;
+  font-family: $primary_font;
+}
+
+.formHeaderSubTitle {
+  @include bodyCopy4;
+  margin: 0;
+}

@@ -1,0 +1,14 @@
+@import "./fonts.scss";
+@import "./variables";
+
+body {
+  margin: 0;
+  font-family: $primary_font, 'Helvetica Neue', sans-serif;
+  color: $primary_color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

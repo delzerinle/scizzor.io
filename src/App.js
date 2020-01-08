@@ -1,9 +1,14 @@
 import React from 'react';
-import './styles/App.scss';
+import ScrollablePage from './Pages/Page';
+import BrandSignUpPage from './Pages/BrandSignUp';
+
+import './styles/app.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
+      {/* <ScrollablePage/> */}
+      <BrandSignUpPage/>
     </div>
   );
 }

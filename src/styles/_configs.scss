@@ -1,0 +1,71 @@
+@import './variables';
+
+// Typography definitions
+@mixin header1 {
+  font-family: $secondary_font;
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: $primary_color;
+}
+
+@mixin header2 {
+  @include header1;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+@mixin header3 {
+  @include header1;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+@mixin header4 {
+  @include header1;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin header5 {
+  @include header1;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin bodyCopy1 {
+  font-family: $primary_font;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: normal;
+  letter-spacing: 0;
+  color: $primary_color;
+}
+
+@mixin bodyCopy2 {
+  @include bodyCopy1;
+  font-weight: 500;
+}
+
+@mixin bodyCopy3 {
+  @include bodyCopy1;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@mixin bodyCopy4 {
+  @include bodyCopy3;
+  font-weight: 500;
+}
+
+@mixin bodyCopy5 {
+  @include bodyCopy1;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+@mixin bodyCopy6 {
+  @include bodyCopy5;
+  font-weight: 500;
+}
