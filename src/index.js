@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
 import App from './App';
+
+import './styles/index.scss';
+import './fonts/ButlerStencil.woff';
+import './fonts/ButlerStencil.woff2';
+import './fonts/Rubik-Regular.ttf';
+
 import * as serviceWorker from './utility/serviceWorker';
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

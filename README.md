@@ -7,3 +7,6 @@ N.B navigate to insecure app url for now (create-react-app generates node_module
 + git commit 'commit msg'
 + git push heroku master
 + heroku open
++ 
+##Build
+Uses yarn for building front end
