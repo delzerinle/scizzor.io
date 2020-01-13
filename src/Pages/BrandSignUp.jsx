@@ -1,6 +1,6 @@
 import React from 'react';
 import withOverflow from '../HOC/Global/WithOverflow';
-import withAuthPage from '../HOC/Brand/WithAuthPage';
+import forAuthPage from '../HOC/Brand/forAuthPage';
 
 const BrandSignUp = (props) => {
   return(
@@ -10,6 +10,6 @@ const BrandSignUp = (props) => {
   );
 }
 
-const BrandSignUpPage = withOverflow(withAuthPage(BrandSignUp), false);
+const BrandSignUpPage = withOverflow(forAuthPage(BrandSignUp), false);
 
 export default BrandSignUpPage;

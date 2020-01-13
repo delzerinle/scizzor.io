@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/_authPage.scss';
+import './styles/_forAuthPage.scss';
 import auth_image from '../../images/auth_round_image.jpg';
 
 
