@@ -1,16 +1,7 @@
-import React from 'react'
-import getConfig from 'next/config'
-const { publicRuntimeConfig } = getConfig()
+const Home = () => (
+  <div className="p-4 shadow rounded bg-white">
+    <h1 className="text-purple-500 leading-normal">Tailwind!!!</h1>
+  </div>
+);
 
-const { API_URL } = publicRuntimeConfig
-
-export default class extends React.Component {
-  static async getInitialProps() {
-    // fetch(`${API_URL}/some-path`)
-    return {}
-  }
-
-  render() {
-    return <div>The API_URL is {API_URL}</div>
-  }
-}
+export default Home;

@@ -10,12 +10,31 @@
     "run-docker": "docker run --rm -it -p 3000:3000 -e 'API_URL=https://example.com' next-app"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "formik": "^2.1.2",
     "next": "latest",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "yup": "^0.28.0"
   },
   "devDependencies": {
-    "isomorphic-unfetch": "^3.0.0"
+    "@commitlint/cli": "^8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "3.0.2",
+    "husky": "^4.0.9",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.1.4"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
