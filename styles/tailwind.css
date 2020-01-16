@@ -1,3 +1,73 @@
 @tailwind base;
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/graphik/Graphik-Regular.eot") format("embedded-opentype"),
+    url("/fonts/graphik/Graphik-Regular.woff") format("woff"),
+    url("/fonts/graphik/Graphik-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/canela/Canela-Regular.eot") format("embedded-opentype"),
+    url("/fonts/canela/Canela-Regular.woff") format("woff"),
+    url("/fonts/canela/Canela-Regular.woff2") format("woff2"),
+    url("/fonts/canela/Canela-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Graphik", '"Helvetica Neue"', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Canela";
+  @apply font-light tracking-normal;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 4.375rem;
+}
+
+h2 {
+  @apply text-5xl;
+  line-height: 3.75rem;
+}
+
+h3 {
+  @apply text-4xl;
+  line-height: 2.75rem;
+}
+
+h4 {
+  @apply text-2xl;
+  line-height: 1.875rem;
+}
+
+p {
+  line-height: 1.75rem;
+  @apply font-light tracking-normal;
+}
+
+/* Custom utilities */
+.p-big {
+  line-height: 2.25rem;
+  @apply text-xl font-light tracking-normal;
+}
+
+.p-small {
+  line-height: 1.5rem;
+  @apply text-xs font-light tracking-normal;
+}
