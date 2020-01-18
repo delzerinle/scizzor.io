@@ -77,6 +77,14 @@ p {
 }
 
 /* Custom utilities */
+.font-body {
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Canela';
+}
+
 .p-lg {
   line-height: 2.25rem;
   @apply text-xl font-light tracking-normal;
@@ -98,6 +106,12 @@ p {
 
 .btn-sm {
   @apply btn  py-2 px-10;
+}
+
+.form-input .form-input__field:focus ~ .form-input__label,
+.form-input .form-input__field:not([value='']) ~ .form-input__label {
+  transform: translateY(-14px);
+  @apply p-sm bg-alt-3 py-0 px-1 ml-4;
 }
 
 /* Media Queries */
