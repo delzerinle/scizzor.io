@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-const SEO = ({ title, description, image }) => (
+const SEO = ({ title, description, image = 'img_url' }) => (
   <Head>
     <title>{title}</title>
     <meta charSet="utf-8" />
@@ -17,7 +17,7 @@ const SEO = ({ title, description, image }) => (
     <meta property="og:site_name" content="Scizzor App" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@xyz" />
+    <meta name="twitter:site" content="@scizzorstyle" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
@@ -100,7 +100,7 @@ const SEO = ({ title, description, image }) => (
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default SEO;

@@ -1,20 +1,35 @@
 @tailwind base;
 
 @font-face {
-  font-family: "Graphik";
-  src: url("/fonts/graphik/Graphik-Regular.eot") format("embedded-opentype"),
-    url("/fonts/graphik/Graphik-Regular.woff") format("woff"),
-    url("/fonts/graphik/Graphik-Regular.ttf") format("truetype");
+  font-family: 'Graphik';
+  src: url('/fonts/graphik/regular/Graphik-Regular.eot');
+  src: url('/fonts/graphik/regular/Graphik-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/graphik/regular/Graphik-Regular.woff') format('woff'),
+    url('/fonts/graphik/regular/Graphik-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Canela";
-  src: url("/fonts/canela/Canela-Regular.eot") format("embedded-opentype"),
-    url("/fonts/canela/Canela-Regular.woff") format("woff"),
-    url("/fonts/canela/Canela-Regular.woff2") format("woff2"),
-    url("/fonts/canela/Canela-Regular.ttf") format("truetype");
+  font-family: 'Graphik';
+  src: url('/fonts/graphik/medium/Graphik-Medium.eot');
+  src: url('/fonts/graphik/medium/Graphik-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/graphik/medium/Graphik-Medium.woff') format('woff'),
+    url('/fonts/graphik/medium/Graphik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/canela/Canela-Regular.eot');
+  src: url('/fonts/canela/Canela-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/canela/Canela-Regular.woff') format('woff'),
+    url('/fonts/canela/Canela-Regular.woff2') format('woff2'),
+    url('/fonts/canela/Canela-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
@@ -23,7 +38,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Graphik", '"Helvetica Neue"', sans-serif;
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,7 +47,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Canela";
+  font-family: 'Canela';
   @apply font-light tracking-normal;
 }
 
@@ -70,4 +85,17 @@ p {
 .p-sm {
   line-height: 1.5rem;
   @apply text-xs font-light tracking-normal;
+}
+
+.btn {
+  line-height: 1.75rem;
+  @apply bg-primary text-alt-3 tracking-normal font-medium;
+}
+
+.btn-lg {
+  @apply py-4 px-20;
+}
+
+.btn-sm {
+  @apply py-2 px-10;
 }
