@@ -4,9 +4,9 @@ const Home = () => (
     <h2 className="text-secondary">Scizzor</h2>
     <h3 className="text-tertiary">Scizzor</h3>
     <h4 className="text-alt-1">Scizzor</h4>
-    <p className="p-big text-alt-2">Scizzor</p>
+    <p className="p-lg text-alt-2">Scizzor</p>
     <p>Scizzor</p>
-    <p className="p-small">Scizzor</p>
+    <p className="p-sm">Scizzor</p>
   </div>
 );
 

@@ -62,12 +62,12 @@ p {
 }
 
 /* Custom utilities */
-.p-big {
+.p-lg {
   line-height: 2.25rem;
   @apply text-xl font-light tracking-normal;
 }
 
-.p-small {
+.p-sm {
   line-height: 1.5rem;
   @apply text-xs font-light tracking-normal;
 }
