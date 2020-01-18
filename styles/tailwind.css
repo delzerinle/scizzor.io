@@ -93,9 +93,16 @@ p {
 }
 
 .btn-lg {
-  @apply py-4 px-20;
+  @apply btn py-4 px-20;
 }
 
 .btn-sm {
-  @apply py-2 px-10;
+  @apply btn  py-2 px-10;
+}
+
+/* Media Queries */
+@screen md {
+  .w-360 {
+    width: 360px;
+  }
 }

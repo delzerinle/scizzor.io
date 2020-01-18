@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import Home from './index';
-import { SEO } from '../components';
+import { SEO, Auth } from '../components';
 
 describe('Home page tests', () => {
   it('renders without crashing', () => {
@@ -10,9 +10,12 @@ describe('Home page tests', () => {
   });
 
   it('renders SEO component', () => {
-    const wrapper = mount(<Home />);
-    expect(
-      wrapper.contains(<SEO title="Title" description="description" />)
-    ).toBeTruthy();
+    const wrapper = shallow(<Home />);
+    expect(wrapper.find(SEO)).toHaveLength(1);
+  });
+
+  it('renders Auth component', () => {
+    const wrapper = shallow(<Home />);
+    expect(wrapper.find(Auth)).toHaveLength(1);
   });
 });
