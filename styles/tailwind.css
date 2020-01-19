@@ -108,10 +108,14 @@ p {
   @apply btn  py-2 px-10;
 }
 
-.form-input .form-input__field:focus ~ .form-input__label,
-.form-input .form-input__field:not([value='']) ~ .form-input__label {
+.field-input .field-input__field:focus ~ .field-input__label,
+.field-input .field-input__field:not([value='']) ~ .field-input__label {
   transform: translateY(-14px);
   @apply p-sm bg-alt-3 py-0 px-1 ml-4;
+}
+
+.field-error {
+  @apply border-primary;
 }
 
 /* Media Queries */
