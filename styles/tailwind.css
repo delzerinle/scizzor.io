@@ -38,6 +38,7 @@
 @tailwind utilities;
 
 body {
+  @apply text-alt-1;
   font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -37,7 +37,7 @@ const BrandSignUpForm = () => {
       }}
     >
       {({ errors, touched, isSubmitting }) => (
-        <Form>
+        <Form className="mt-8">
           <div className="md:flex md:justify-between md:justify-start">
             <div className="md:flex-1 md:mr-5">
               <InputField
@@ -178,7 +178,7 @@ const BrandSignUpForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-sm w-full mt-12 md:mt-2"
+            className="btn-sm w-full mt-8 md:mt-2"
           >
             Create account
           </button>

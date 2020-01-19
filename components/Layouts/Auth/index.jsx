@@ -18,7 +18,7 @@ const Auth = ({ children, hideSideBarOnMobile = false }) => (
       />
     </div>
     <div className="bg-alt-3 px-5 py-12 flex-1 flex">
-      <div className="max-w-lg mx-auto self-center">{children}</div>
+      <div className="w-full max-w-lg mx-auto self-center">{children}</div>
     </div>
   </div>
 );
