@@ -43,7 +43,7 @@ const BrandSignUpForm = () => {
               <InputField
                 errors={errors}
                 name="firstName"
-                touched={errors}
+                touched={touched}
                 label="First Name"
               />
             </div>
@@ -51,7 +51,7 @@ const BrandSignUpForm = () => {
               <InputField
                 errors={errors}
                 name="lastName"
-                touched={errors}
+                touched={touched}
                 label="Last Name"
               />
             </div>
@@ -59,13 +59,13 @@ const BrandSignUpForm = () => {
           <InputField
             errors={errors}
             name="brandName"
-            touched={errors}
+            touched={touched}
             label="Brand Name"
           />
           <InputField
             name="email"
             errors={errors}
-            touched={errors}
+            touched={touched}
             label="Email Address"
             icon={
               <svg
@@ -90,7 +90,7 @@ const BrandSignUpForm = () => {
           />
           <InputField
             errors={errors}
-            touched={errors}
+            touched={touched}
             name="phoneNumber"
             label="Phone Number"
             icon={
@@ -112,7 +112,7 @@ const BrandSignUpForm = () => {
             name="password"
             type="password"
             errors={errors}
-            touched={errors}
+            touched={touched}
             label="Create Password"
             icon={
               <svg
@@ -144,7 +144,7 @@ const BrandSignUpForm = () => {
           <InputField
             errors={errors}
             type="password"
-            touched={errors}
+            touched={touched}
             name="confirmPassword"
             label="Re-type Password"
             icon={

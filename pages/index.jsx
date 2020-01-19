@@ -2,7 +2,7 @@ import { SEO, Auth } from '@components';
 
 const Home = () => (
   <>
-    <SEO title="Title" description="description" />
+    <SEO title="Home" description="description" />
     <Auth>
       <div className="p-4 shadow rounded bg-white">
         <h1 className="text-primary">Scizzor</h1>
