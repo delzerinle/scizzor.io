@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Formik, Form } from 'formik';
 import { object, string, ref } from 'yup';
 
 import InputField from '../formElements/InputField';
 
-const BrandSignUpForm = () => {
+const BrandSignUpForm = ({ onSubmit }) => {
   const validationSchema = object().shape({
     firstName: string().required(),
     lastName: string().required(),
@@ -13,7 +14,9 @@ const BrandSignUpForm = () => {
       .email()
       .required(),
     phoneNumber: string().required(),
-    password: string().required(),
+    password: string()
+      .min(8)
+      .required(),
     confirmPassword: string()
       .oneOf([ref('password'), null], 'passwords do not match')
       .required(),
@@ -31,8 +34,8 @@ const BrandSignUpForm = () => {
         confirmPassword: '',
       }}
       validationSchema={validationSchema}
-      onSubmit={(values, actions) => {
-        console.log(values);
+      onSubmit={async (values, actions) => {
+        await onSubmit(values);
         actions.setSubmitting(false);
       }}
     >
@@ -186,6 +189,10 @@ const BrandSignUpForm = () => {
       )}
     </Formik>
   );
+};
+
+BrandSignUpForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default BrandSignUpForm;

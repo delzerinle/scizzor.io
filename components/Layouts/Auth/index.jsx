@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Auth = ({ children, hideSideBarOnMobile = false }) => (
-  <div className="w-full flex flex-col md:flex-row max-w-screen-xl min-h-screen">
+  <div className="w-full flex flex-col md:flex-row max-w-screen-xl min-h-screen mx-auto">
     <div
       className={`bg-tertiary px-5 pt-12 pb-8 w-360 md:flex-shrink-0 md:pt-24 md:relative md:overflow-y-hidden ${
         hideSideBarOnMobile ? 'hidden md:block' : 'block'
