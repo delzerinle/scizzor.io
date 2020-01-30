@@ -5,7 +5,7 @@ import { object, string } from 'yup';
 
 import InputField from '../formElements/InputField';
 
-const BrandSignInForm = ({ onSubmit }) => {
+const SignInForm = ({ onSubmit }) => {
   const validationSchema = object().shape({
     email: string()
       .email()
@@ -101,8 +101,8 @@ const BrandSignInForm = ({ onSubmit }) => {
   );
 };
 
-BrandSignInForm.propTypes = {
+SignInForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default BrandSignInForm;
+export default SignInForm;

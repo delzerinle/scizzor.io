@@ -12,7 +12,7 @@ const BrandsRegister = () => {
   return (
     <>
       <SEO title="Title" description="description" />
-      <Auth>
+      <Auth title="Join Scizzor & Increase Your Instore Appointments">
         <p className="text-center font-medium md:hidden">
           Create a Brand account
         </p>

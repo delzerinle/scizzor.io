@@ -1,6 +1,6 @@
 import { SEO, Auth, SignInForm } from '@components';
 
-const BrandsSignIn = () => {
+const CustomersSignIn = () => {
   const handleSubmit = async values => {
     console.log(values);
   };
@@ -8,7 +8,14 @@ const BrandsSignIn = () => {
   return (
     <>
       <SEO title="Title" description="description" />
-      <Auth title="Join Scizzor & Increase Your Instore Appointments">
+      <Auth
+        title={
+          <span>
+            Sustainable & Stylish, Personalized For{' '}
+            <span className="text-primary">You.</span>
+          </span>
+        }
+      >
         <p className="text-center font-medium md:hidden">Sign in to Scizzor</p>
         <h3 className="hidden mb-3 md:block">Sign In to Scizzor</h3>
         <SignInForm onSubmit={handleSubmit} />
@@ -22,4 +29,4 @@ const BrandsSignIn = () => {
   );
 };
 
-export default BrandsSignIn;
+export default CustomersSignIn;
