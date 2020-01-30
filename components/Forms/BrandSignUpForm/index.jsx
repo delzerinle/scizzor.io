@@ -13,7 +13,9 @@ const BrandSignUpForm = ({ onSubmit }) => {
     email: string()
       .email()
       .required(),
-    phoneNumber: string().required(),
+    phoneNumber: string()
+      .matches(/^[0-9]{9,11}$/, 'invalid phone number format')
+      .required(),
     password: string()
       .min(8)
       .required(),
