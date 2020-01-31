@@ -101,12 +101,29 @@ p {
   @apply bg-primary text-alt-3 tracking-normal font-medium;
 }
 
+.btn-alt {
+  line-height: 1.125rem;
+  @apply bg-alt-3 tracking-normal w-full font-medium border border-alt-1;
+}
+
 .btn-lg {
   @apply btn py-4 px-20;
 }
 
 .btn-sm {
   @apply btn  py-2 px-10;
+}
+
+.btn-alt-sm {
+  @apply btn-alt py-3 px-10;
+}
+
+.btn-alt-sm:hover {
+  @apply text-alt-3 bg-primary border-primary;
+}
+
+.btn-alt-sm:focus {
+  @apply outline-none shadow-outline;
 }
 
 .field-input .field-input__field:focus ~ .field-input__label,

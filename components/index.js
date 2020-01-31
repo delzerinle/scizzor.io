@@ -7,3 +7,7 @@ export { default as BrandsLayout } from './Layouts/Brands';
 export { default as BrandSignUpForm } from './Forms/BrandSignUpForm';
 export { default as CustomerSignUpForm } from './Forms/CustomerSignUpForm';
 export { default as SignInForm } from './Forms/SignInForm';
+
+// misc - brands
+export { default as BrandsTitleBanner } from './BrandsTitleBanner';
+export { default as ApparelCard } from './ApparelCard';
