@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import BrandSignUpForm from './index';
+import CustomerSignUpForm from './index';
 
 it('renders without crashing', () => {
-  shallow(<BrandSignUpForm onSubmit={jest.fn()} />);
+  shallow(<CustomerSignUpForm onSubmit={jest.fn()} />);
 });

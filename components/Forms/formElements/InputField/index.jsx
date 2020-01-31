@@ -25,7 +25,7 @@ const InputField = ({ name, label, icon, type = 'text', errors, touched }) => {
           className="w-full py-2 field-input__field focus:outline-none relative z-10 bg-transparent font-medium"
         />
         <label
-          className="text-secondary font-light tracking-normal absolute py-2 px-4 left-0 transition-all transition-ease z-0 field-input__label"
+          className="text-secondary font-light tracking-normal absolute py-2 px-4 left-0 transition-all transition-ease z-0 field-input__label text-sm pt-3"
           htmlFor={name}
         >
           {label}

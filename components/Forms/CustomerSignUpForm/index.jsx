@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Formik, Form } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import { object, string, ref } from 'yup';
 
 import InputField from '../formElements/InputField';
+import CheckboxField from '../formElements/CheckboxField';
 
-const BrandSignUpForm = ({ onSubmit }) => {
+const CustomerSignUpForm = ({ onSubmit }) => {
   const validationSchema = object().shape({
     firstName: string().required(),
     lastName: string().required(),
-    brandName: string().required(),
     email: string()
       .email()
       .required(),
@@ -22,6 +22,13 @@ const BrandSignUpForm = ({ onSubmit }) => {
     confirmPassword: string()
       .oneOf([ref('password'), null], 'passwords do not match')
       .required(),
+    gender: string()
+      .test(
+        'genderTest',
+        'gender is a required field',
+        value => value === 'male' || value === 'female'
+      )
+      .required(),
   });
 
   return (
@@ -29,11 +36,11 @@ const BrandSignUpForm = ({ onSubmit }) => {
       initialValues={{
         firstName: '',
         lastName: '',
-        brandName: '',
         email: '',
         phoneNumber: '',
         password: '',
         confirmPassword: '',
+        gender: '',
       }}
       validationSchema={validationSchema}
       onSubmit={async (values, actions) => {
@@ -61,12 +68,6 @@ const BrandSignUpForm = ({ onSubmit }) => {
               />
             </div>
           </div>
-          <InputField
-            errors={errors}
-            name="brandName"
-            touched={touched}
-            label="Brand Name"
-          />
           <InputField
             name="email"
             errors={errors}
@@ -180,10 +181,37 @@ const BrandSignUpForm = ({ onSubmit }) => {
             }
           />
 
+          <div className="mt-6">
+            <p>Gender</p>
+            <div className="flex mt-2">
+              <CheckboxField
+                value="male"
+                name="gender"
+                label="Male"
+                errors={errors}
+                touched={touched}
+              />
+
+              <CheckboxField
+                value="female"
+                name="gender"
+                label="Female"
+                errors={errors}
+                touched={touched}
+                className="ml-10"
+              />
+            </div>
+            <ErrorMessage
+              name="gender"
+              component="p"
+              className="p-sm text-secondary"
+            />
+          </div>
+
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-sm w-full mt-8 md:mt-2 focus:outline-none focus:shadow-outline"
+            className="btn-sm w-full mt-8 md:mt-4 focus:outline-none focus:shadow-outline"
           >
             Create account
           </button>
@@ -193,8 +221,8 @@ const BrandSignUpForm = ({ onSubmit }) => {
   );
 };
 
-BrandSignUpForm.propTypes = {
+CustomerSignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default BrandSignUpForm;
+export default CustomerSignUpForm;

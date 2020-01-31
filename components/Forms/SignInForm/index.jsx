@@ -91,7 +91,7 @@ const SignInForm = ({ onSubmit }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-sm w-full mt-8 md:mt-2"
+            className="btn-sm w-full mt-8 md:mt-2 focus:outline-none focus:shadow-outline"
           >
             Sign In
           </button>

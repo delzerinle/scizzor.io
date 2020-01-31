@@ -28,8 +28,25 @@ module.exports = {
         '80': '20rem',
         '88': '22rem',
       },
+      boxShadow: {
+        outline: '0 0 0 3px rgba(192, 149, 88, 0.5)',
+      },
     },
+    customForms: theme => ({
+      default: {
+        checkbox: {
+          borderRadius: theme('borderRadius.none'),
+          '&:focus': {
+            borderColor: theme('colors.primary'),
+            boxShadow: theme('boxShadow.outline'),
+          },
+        },
+      },
+    }),
   },
   variants: {},
-  plugins: [require('tailwindcss-transitions')()],
+  plugins: [
+    require('tailwindcss-transitions')(),
+    require('@tailwindcss/custom-forms'),
+  ],
 };
