@@ -1,8 +1,12 @@
+import { useRouter } from 'next/router';
 import { SEO, Auth, SignInForm } from '@components';
 
 const BrandsSignIn = () => {
+  const router = useRouter();
+
   const handleSubmit = async values => {
     console.log(values);
+    router.push('/brands/apparel');
   };
 
   return (

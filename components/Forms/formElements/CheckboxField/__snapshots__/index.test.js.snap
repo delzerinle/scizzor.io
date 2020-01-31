@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox field tests checkbox field snapshot 1`] = `
+<div
+  className="test"
+>
+  <Field
+    name="test"
+  >
+    <Component />
+  </Field>
+  <label
+    className="font-light text-sm"
+    htmlFor="test"
+  >
+    test
+  </label>
+</div>
+`;

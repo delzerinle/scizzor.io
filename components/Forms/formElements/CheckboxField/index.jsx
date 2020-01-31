@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 
-const CheckboxField = ({ name, label, errors, touched, value, className }) => (
+const CheckboxField = ({ name, label, value, className }) => (
   <div className={className}>
     <Field name={name}>
       {({ field, form }) => (
@@ -25,8 +25,6 @@ const CheckboxField = ({ name, label, errors, touched, value, className }) => (
 );
 
 CheckboxField.propTypes = {
-  errors: PropTypes.object,
-  touched: PropTypes.object,
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
