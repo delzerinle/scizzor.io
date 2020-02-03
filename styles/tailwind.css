@@ -1,3 +1,144 @@
 @tailwind base;
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/graphik/regular/Graphik-Regular.eot');
+  src: url('/fonts/graphik/regular/Graphik-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/graphik/regular/Graphik-Regular.woff') format('woff'),
+    url('/fonts/graphik/regular/Graphik-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/graphik/medium/Graphik-Medium.eot');
+  src: url('/fonts/graphik/medium/Graphik-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/graphik/medium/Graphik-Medium.woff') format('woff'),
+    url('/fonts/graphik/medium/Graphik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/canela/Canela-Regular.eot');
+  src: url('/fonts/canela/Canela-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/canela/Canela-Regular.woff') format('woff'),
+    url('/fonts/canela/Canela-Regular.woff2') format('woff2'),
+    url('/fonts/canela/Canela-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply text-alt-1;
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Canela';
+  @apply font-light tracking-normal;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 4.375rem;
+}
+
+h2 {
+  @apply text-5xl;
+  line-height: 3.75rem;
+}
+
+h3 {
+  @apply text-4xl;
+  line-height: 2.75rem;
+}
+
+h4 {
+  @apply text-2xl;
+  line-height: 1.875rem;
+}
+
+p {
+  line-height: 1.75rem;
+  @apply font-light tracking-normal;
+}
+
+/* Custom utilities */
+.font-body {
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Canela';
+}
+
+.p-lg {
+  line-height: 2.25rem;
+  @apply text-xl font-light tracking-normal;
+}
+
+.p-sm {
+  line-height: 1.5rem;
+  @apply text-xs font-light tracking-normal;
+}
+
+.btn {
+  line-height: 1.75rem;
+  @apply bg-primary text-alt-3 tracking-normal font-medium;
+}
+
+.btn-alt {
+  line-height: 1.125rem;
+  @apply bg-alt-3 tracking-normal w-full font-medium border border-alt-1;
+}
+
+.btn-lg {
+  @apply btn py-4 px-20;
+}
+
+.btn-sm {
+  @apply btn  py-2 px-10;
+}
+
+.btn-alt-sm {
+  @apply btn-alt py-3 px-10;
+}
+
+.btn-alt-sm:hover {
+  @apply text-alt-3 bg-primary border-primary;
+}
+
+.btn-alt-sm:focus {
+  @apply outline-none shadow-outline;
+}
+
+.field-input .field-input__field:focus ~ .field-input__label,
+.field-input .field-input__field:not([value='']) ~ .field-input__label {
+  transform: translateY(-14px);
+  @apply p-sm bg-alt-3 py-0 px-1 ml-4;
+}
+
+.field-error {
+  @apply border-primary;
+}
+
+/* Media Queries */
+@screen md {
+  .w-360 {
+    width: 360px;
+  }
+}
