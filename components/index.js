@@ -2,6 +2,7 @@
 export { default as SEO } from './Layouts/SEO';
 export { default as Auth } from './Layouts/Auth';
 export { default as BrandsLayout } from './Layouts/Brands';
+export { default as CustomersLayout } from './Layouts/Customers';
 
 // forms
 export { default as BrandSignUpForm } from './Forms/BrandSignUpForm';
