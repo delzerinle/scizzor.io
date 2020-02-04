@@ -13,6 +13,12 @@ const CustomersLayout = ({ children }) => (
             />
           </svg>
         </button>
+
+        <img
+          className="h-16 hidden md:block"
+          src="/images/logo.png"
+          alt="logo"
+        />
       </div>
 
       <div className="w-1/2">

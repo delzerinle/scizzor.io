@@ -1,9 +1,11 @@
-import { SEO, CustomersLayout } from '@components';
+import { SEO, CustomersLayout, LandingPageBanner } from '@components';
 
 const Home = () => (
   <>
     <SEO title="Title" description="description" />
-    <CustomersLayout>sdsd</CustomersLayout>
+    <CustomersLayout>
+      <LandingPageBanner />
+    </CustomersLayout>
   </>
 );
 

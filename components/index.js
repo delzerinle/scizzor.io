@@ -12,3 +12,6 @@ export { default as SignInForm } from './Forms/SignInForm';
 // misc - brands
 export { default as BrandsTitleBanner } from './BrandsTitleBanner';
 export { default as ApparelCard } from './ApparelCard';
+
+// misc - customers
+export { default as LandingPageBanner } from './LandingPageBanner';
