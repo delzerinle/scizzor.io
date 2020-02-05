@@ -32,20 +32,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeResource {
-  @Autowired
   private AuthenticationManager authenticationManager;
-
-  @Autowired
   private JwtUtil jwtUtil;
-
-  @Autowired
   private AppUserDetailsService userDetailsService;
-  
-  @Autowired
   private UserServiceImpl userServiceImpl;
+  private ApplicationEventPublisher applicationEventPublisher;
   
   @Autowired
-  private ApplicationEventPublisher applicationEventPublisher;
+  public HomeResource(
+      final AuthenticationManager authenticationManager,
+      final JwtUtil jwtUtil,
+      final AppUserDetailsService userDetailsService,
+      final UserServiceImpl userServiceImpl,
+      final ApplicationEventPublisher applicationEventPublisher
+  ) {
+    this.authenticationManager = authenticationManager;
+    this.jwtUtil =jwtUtil;
+    this.userDetailsService = userDetailsService;
+    this.userServiceImpl = userServiceImpl;
+    this.applicationEventPublisher = applicationEventPublisher;
+  }
 
   @GetMapping("/")
   public String home() {
