@@ -21,7 +21,8 @@ const CustomersRegister = () => {
         }
       >
         <p className="text-center font-medium md:hidden">Create an account</p>
-        <h3 className="hidden mb-3 md:block">Create an account</h3>
+        <h3 className="hidden mb-3 md:block xl:hidden">Create an account</h3>
+        <h2 className="hidden mb-3 xl:block">Create an account</h2>
         <p className="text-center text-sm leading-relaxed md:text-left md:max-w-sm">
           Create your account to save your favourites and checkout even faster.
         </p>

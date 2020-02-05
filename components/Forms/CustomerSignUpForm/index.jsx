@@ -26,7 +26,7 @@ const CustomerSignUpForm = ({ onSubmit }) => {
       .test(
         'genderTest',
         'gender is a required field',
-        value => value === 'male' || value === 'female'
+        value => value === 'male' || value === 'female' || value === 'other'
       )
       .required(),
   });
@@ -199,6 +199,15 @@ const CustomerSignUpForm = ({ onSubmit }) => {
                 errors={errors}
                 touched={touched}
                 className="ml-10"
+              />
+  
+              <CheckboxField
+                  value="other"
+                  name="gender"
+                  label="Other"
+                  errors={errors}
+                  touched={touched}
+                  className="ml-10"
               />
             </div>
             <ErrorMessage

@@ -14,7 +14,8 @@ const BrandsSignIn = () => {
       <SEO title="Title" description="description" />
       <Auth title="Join Scizzor & Increase Your Instore Appointments">
         <p className="text-center font-medium md:hidden">Sign in to Scizzor</p>
-        <h3 className="hidden mb-3 md:block">Sign In to Scizzor</h3>
+        <h3 className="hidden md:block xl:hidden mb-3">Sign In to Scizzor</h3>
+        <h2 className="hidden xl:block mb-3">Sign In to Scizzor</h2>
         <SignInForm onSubmit={handleSubmit} />
         <p className="mt-5">Forgot your password?</p>
         <p>
