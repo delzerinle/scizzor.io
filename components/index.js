@@ -15,3 +15,5 @@ export { default as ApparelCard } from './ApparelCard';
 
 // misc - customers
 export { default as LandingPageBanner } from './LandingPageBanner';
+export { default as LandingPageFavBrandsBanner } from './LandingPageFavBrandsBanner';
+export { default as LandingPageBrandSignupBanner } from './LandingPageBrandSignupBanner';

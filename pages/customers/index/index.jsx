@@ -1,10 +1,18 @@
-import { SEO, CustomersLayout, LandingPageBanner } from '@components';
+import {
+  SEO,
+  CustomersLayout,
+  LandingPageBanner,
+  LandingPageFavBrandsBanner,
+  LandingPageBrandSignupBanner,
+} from '@components';
 
 const Home = () => (
   <>
     <SEO title="Title" description="description" />
     <CustomersLayout>
       <LandingPageBanner />
+      <LandingPageFavBrandsBanner />
+      <LandingPageBrandSignupBanner />
     </CustomersLayout>
   </>
 );
