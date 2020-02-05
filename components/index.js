@@ -17,3 +17,4 @@ export { default as ApparelCard } from './ApparelCard';
 export { default as LandingPageBanner } from './LandingPageBanner';
 export { default as LandingPageFavBrandsBanner } from './LandingPageFavBrandsBanner';
 export { default as LandingPageBrandSignupBanner } from './LandingPageBrandSignupBanner';
+export { default as MobileMenuDrawer } from './MobileMenuDrawer';
