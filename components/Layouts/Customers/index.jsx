@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MobileMenuDrawer } from '@components';
+import { MobileMenuDrawer, MobileFooter, Footer } from '@components';
 
 const CustomersLayout = ({ children }) => {
   const [isOpen, setOpen] = useState(false);
@@ -8,8 +8,9 @@ const CustomersLayout = ({ children }) => {
       <div className="flex  justify-between items-center px-5 md:py-2">
         <div className="w-1/4">
           <button
+            data-testid="menuToggle"
             onClick={() => setOpen(true)}
-            className="p-1 text-black focus:outline-none hover:text-primary focus:text-primary transition-ease transition-all md:hidden"
+            className="p-1 text-black focus:outline-none hover:text-primary focus:text-primary ease-linear duration-300 transition-colors md:hidden"
           >
             <svg
               className="h-4 w-4 stroke-current"
@@ -55,7 +56,7 @@ const CustomersLayout = ({ children }) => {
         </div>
 
         <div className="w-1/4 flex items-center justify-end">
-          <button className="p-1 mt-1 mr-1 text-black focus:outline-none hover:text-primary focus:text-primary transition-ease transition-all">
+          <button className="p-1 mt-1 mr-1 text-black focus:outline-none hover:text-primary focus:text-primary ease-linear duration-300 transition-colors">
             <svg
               className="h-5 w-5 stroke-current"
               fill="none"
@@ -69,7 +70,7 @@ const CustomersLayout = ({ children }) => {
             </svg>
           </button>
 
-          <button className="p-1 text-black focus:outline-none hover:text-primary focus:text-primary transition-ease transition-all md:hidden">
+          <button className="p-1 text-black focus:outline-none hover:text-primary focus:text-primary ease-linear duration-300 transition-colors md:hidden">
             <svg
               className="h-5 w-5 fill-current"
               strokeWidth="0"
@@ -79,7 +80,7 @@ const CustomersLayout = ({ children }) => {
             </svg>
           </button>
 
-          <button className="hidden md:block bg-alt-1 text-alt-3 text-sm px-6 py-2 ml-6 focus:outline-none focus:bg-primary hover:bg-primary transition-ease transition-all">
+          <button className="hidden md:block bg-alt-1 text-alt-3 text-sm px-6 py-2 ml-6 focus:outline-none focus:bg-primary hover:bg-primary ease-linear duration-300 transition-colors">
             Sign In
           </button>
         </div>
@@ -87,6 +88,8 @@ const CustomersLayout = ({ children }) => {
       <MobileMenuDrawer isOpen={isOpen} closeDrawer={() => setOpen(false)} />
       {children}
 
+      <MobileFooter />
+      <Footer />
       <div className="bg-alt-2 px-5 py-4 text-center text-xs md:flex md:justify-between md:items-center">
         <p className="flex justify-center items-center md:order-2">
           <a href="#">Terms & Conditions</a>

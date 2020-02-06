@@ -38,8 +38,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
-    "tailwindcss": "^1.1.4",
-    "tailwindcss-transitions": "^2.1.0"
+    "tailwindcss": "^1.2.0"
   },
   "license": "ISC",
   "config": {

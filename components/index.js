@@ -3,6 +3,9 @@ export { default as SEO } from './Layouts/SEO';
 export { default as Auth } from './Layouts/Auth';
 export { default as BrandsLayout } from './Layouts/Brands';
 export { default as CustomersLayout } from './Layouts/Customers';
+export { default as MobileMenuDrawer } from './MobileMenuDrawer';
+export { default as MobileFooter } from './MobileFooter';
+export { default as Footer } from './Footer';
 
 // forms
 export { default as BrandSignUpForm } from './Forms/BrandSignUpForm';
@@ -17,4 +20,5 @@ export { default as ApparelCard } from './ApparelCard';
 export { default as LandingPageBanner } from './LandingPageBanner';
 export { default as LandingPageFavBrandsBanner } from './LandingPageFavBrandsBanner';
 export { default as LandingPageBrandSignupBanner } from './LandingPageBrandSignupBanner';
-export { default as MobileMenuDrawer } from './MobileMenuDrawer';
+export { default as Accordion } from './Accordion';
+export { default as AccordionSection } from './AccordionSection';

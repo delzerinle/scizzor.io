@@ -13,10 +13,10 @@ describe('Mobile menu drawer tests', () => {
       <MobileMenuDrawer isOpen={true} closeDrawer={() => jest.func()} />
     );
     expect(
-      wrapper.find('[data-test-id="MobileMenuDrawer"]').hasClass('fixed')
+      wrapper.find('[data-testid="MobileMenuDrawer"]').hasClass('fixed')
     ).toBe(true);
     expect(
-      wrapper.find('[data-test-id="MobileMenuDrawer"]').hasClass('hidden')
+      wrapper.find('[data-testid="MobileMenuDrawer"]').hasClass('hidden')
     ).toBe(false);
   });
 
@@ -25,10 +25,10 @@ describe('Mobile menu drawer tests', () => {
       <MobileMenuDrawer isOpen={false} closeDrawer={() => jest.func()} />
     );
     expect(
-      wrapper.find('[data-test-id="MobileMenuDrawer"]').hasClass('hidden')
+      wrapper.find('[data-testid="MobileMenuDrawer"]').hasClass('hidden')
     ).toBe(true);
     expect(
-      wrapper.find('[data-test-id="MobileMenuDrawer"]').hasClass('fixed')
+      wrapper.find('[data-testid="MobileMenuDrawer"]').hasClass('fixed')
     ).toBe(false);
   });
 });

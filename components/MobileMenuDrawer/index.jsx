@@ -5,13 +5,13 @@ const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
 
   return (
     <div
-      data-test-id="MobileMenuDrawer"
+      data-testid="MobileMenuDrawer"
       className={`${wrapperClass} md:hidden bg-white h-full top-0 w-full max-w-xs flex flex-col`}
     >
       <div className="px-5 flex justify-between items-center">
         <button
           onClick={closeDrawer}
-          className="p-1 text-black focus:outline-none hover:text-primary focus:text-primary transition-ease transition-all"
+          className="p-1 text-black focus:outline-none hover:text-primary focus:text-primary ease-linear duration-300 transition-colors"
         >
           <svg
             className="h-4 w-4 stroke-current"
