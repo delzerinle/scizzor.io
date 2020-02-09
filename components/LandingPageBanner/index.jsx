@@ -7,7 +7,7 @@ const LandingPageBanner = () => (
     />
     <div className="md:order-1 md:ml-10">
       <h3 className="mb-4">One Size Never Fits All</h3>
-      <p className="text-sm mx-auto w-full max-w-sm mb-8 leading-semi-loose md:max-w-md">
+      <p className="text-sm mx-auto w-full max-w-sm mb-8 leading-6 md:max-w-md">
         Experience Bespoke Fashion Enhanced By Machine Learning, Measurement
         Technology & Made-To-Measure Specialists.
       </p>

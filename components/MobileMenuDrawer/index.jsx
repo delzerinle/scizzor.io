@@ -6,7 +6,7 @@ const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
   return (
     <div
       data-testid="MobileMenuDrawer"
-      className={`${wrapperClass} md:hidden bg-white h-full top-0 w-full max-w-xs flex flex-col`}
+      className={`${wrapperClass} md:hidden bg-white h-full top-0 w-full max-w-xs flex flex-col z-20`}
     >
       <div className="px-5 flex justify-between items-center">
         <button

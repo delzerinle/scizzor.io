@@ -5,7 +5,7 @@ const LandingPageFavBrandsBanner = () => (
       <span className="text-primary">You.</span>
     </h4>
 
-    <p className="text-sm leading-semi-loose py-5 md:max-w-md md:mx-auto">
+    <p className="text-sm leading-6 py-5 md:max-w-md md:mx-auto">
       Scizzor carries an array of premium brands known for refined cuts, fabrics
       & details - just for you. Here are just a few favorites.
     </p>

@@ -136,6 +136,14 @@ p {
   @apply border-primary;
 }
 
+.linear-gradient::after {
+  content: '';
+  @apply absolute inset-0 z-10;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    #000000;
+  mix-blend-mode: multiply;
+}
+
 /* Media Queries */
 @screen md {
   .w-360 {

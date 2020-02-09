@@ -33,9 +33,6 @@ module.exports = {
         outline: '0 0 0 3px rgba(192, 149, 88, 0.5)',
         custom: '0px 4px 16px rgba(0, 0, 0, 0.1)',
       },
-      lineHeight: {
-        'semi-loose': '1.75',
-      },
     },
     customForms: theme => ({
       default: {

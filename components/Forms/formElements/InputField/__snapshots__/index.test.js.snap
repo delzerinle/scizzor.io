@@ -14,7 +14,7 @@ exports[`Input field tests input field snapshot 1`] = `
       type="text"
     />
     <label
-      className="text-secondary font-light tracking-normal absolute py-2 px-4 left-0 transition-all transition-ease z-0 field-input__label text-sm pt-3"
+      className="text-secondary font-light tracking-normal absolute py-2 px-4 left-0 transition-transform duration-200 ease-in z-0 field-input__label text-sm pt-3"
       htmlFor="test"
     >
       test
@@ -47,7 +47,7 @@ exports[`Input field tests input field with icon snapshot 1`] = `
       type="text"
     />
     <label
-      className="text-secondary font-light tracking-normal absolute py-2 px-4 left-0 transition-all transition-ease z-0 field-input__label text-sm pt-3"
+      className="text-secondary font-light tracking-normal absolute py-2 px-4 left-0 transition-transform duration-200 ease-in z-0 field-input__label text-sm pt-3"
       htmlFor="test"
     >
       test

@@ -9,7 +9,7 @@ const LandingPageBrandSignupBanner = () => (
       Join the Scizzor <span className="text-primary">Crew</span>
     </h4>
 
-    <p className="text-sm leading-semi-loose mt-4 mb-2 w-full max-w-xs ml-0 mr-auto pr-5 md:max-w-sm">
+    <p className="text-sm leading-6 mt-4 mb-2 w-full max-w-xs ml-0 mr-auto pr-5 md:max-w-sm">
       Are you a Fashion Brand specialized in making refined cuts, fabrics &
       details? Join as a Brand on Scizzor today
     </p>

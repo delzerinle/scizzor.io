@@ -18,6 +18,9 @@ export { default as ApparelCard } from './ApparelCard';
 
 // misc - customers
 export { default as LandingPageBanner } from './LandingPageBanner';
+export { default as LandingPageInfoCard } from './LandingPageInfoCard';
+export { default as LandingPageProductSlider } from './LandingPageProductSlider';
+export { default as LandingPageCustomerCTA } from './LandingPageCustomerCTA';
 export { default as LandingPageFavBrandsBanner } from './LandingPageFavBrandsBanner';
 export { default as LandingPageBrandSignupBanner } from './LandingPageBrandSignupBanner';
 export { default as Accordion } from './Accordion';
