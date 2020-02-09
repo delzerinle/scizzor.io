@@ -10,7 +10,7 @@ import com.scizzor.scizzorio.model.dto.AuthenticationResponse;
 import com.scizzor.scizzorio.registration.OnRegistrationCompleteEvent;
 import com.scizzor.scizzorio.service.AppUserDetailsService;
 import com.scizzor.scizzorio.service.JwtUtil;
-import com.scizzor.scizzorio.service.UserServiceImpl;
+import com.scizzor.scizzorio.service.UserService;
 import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -31,25 +31,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeResource {
+public class AuthenticationController {
   private AuthenticationManager authenticationManager;
   private JwtUtil jwtUtil;
   private AppUserDetailsService userDetailsService;
-  private UserServiceImpl userServiceImpl;
+  private UserService userService;
   private ApplicationEventPublisher applicationEventPublisher;
   
   @Autowired
-  public HomeResource(
+  public AuthenticationController(
       final AuthenticationManager authenticationManager,
       final JwtUtil jwtUtil,
       final AppUserDetailsService userDetailsService,
-      final UserServiceImpl userServiceImpl,
+      final UserService userService,
       final ApplicationEventPublisher applicationEventPublisher
   ) {
     this.authenticationManager = authenticationManager;
     this.jwtUtil =jwtUtil;
     this.userDetailsService = userDetailsService;
-    this.userServiceImpl = userServiceImpl;
+    this.userService = userService;
     this.applicationEventPublisher = applicationEventPublisher;
   }
 
@@ -115,10 +115,7 @@ public class HomeResource {
   {
     Optional<UserAccount> registeredUser = Optional.empty();
     if (!bindingResult.hasErrors()) {
-      registeredUser = createUserAccount(userAccount);
-      if (registeredUser.isEmpty()) {
-        bindingResult.rejectValue("email", "duplicate email");
-      }
+      registeredUser = createUserAccount(userAccount, bindingResult);
     }
   
     if (bindingResult.hasErrors()) {
@@ -136,7 +133,7 @@ public class HomeResource {
             )
         );
       } catch (Exception ex) {
-        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
       }
       return ResponseEntity.ok(registeredUser.get());
     }
@@ -144,9 +141,9 @@ public class HomeResource {
     return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
   }
   
-  private Optional<UserAccount> createUserAccount(UserAccountDto userAccountDto) {
+  private Optional<UserAccount> createUserAccount(UserAccountDto userAccountDto, BindingResult bindingResult) {
     try {
-      return userServiceImpl.registerNewUserAccount(userAccountDto);
+      return userService.registerNewUserAccount(userAccountDto, bindingResult);
     } catch (EmailExistsException e) {
       return Optional.empty();
     }

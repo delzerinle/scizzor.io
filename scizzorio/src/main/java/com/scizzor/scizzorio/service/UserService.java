@@ -5,12 +5,13 @@ import com.scizzor.scizzorio.exceptions.EmailExistsException;
 import com.scizzor.scizzorio.model.UserAccount;
 import com.scizzor.scizzorio.model.dto.UserAccountDto;
 import java.util.Optional;
+import org.springframework.validation.BindingResult;
 
 public interface UserService {
-  Optional<UserAccount> registerNewUserAccount(UserAccountDto userAccountDto)
+  Optional<UserAccount> registerNewUserAccount(UserAccountDto userAccountDto, BindingResult bindingResult)
       throws EmailExistsException;
   UserAccount getUser(String verificationToken);
-  void saveRegisteredUser(UserAccount user);
+  UserAccount saveRegisteredUser(UserAccount user);
   void createVerificationToken(UserAccount user, String token);
   Optional<VerificationToken> getVerificationToken(String verificationToken);
 }

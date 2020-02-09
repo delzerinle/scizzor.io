@@ -1,15 +1,10 @@
 package com.scizzor.scizzorio.repository;
 
 import com.scizzor.scizzorio.model.UserAccount;
-import java.util.Optional;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Component
-public class UserRepository {
-  public UserRepository() {}
-  
-  public Optional<UserAccount> findByEmail(String email) {
-    return Optional.empty();
-  }
-  public Optional<UserAccount> save(UserAccount user) { return Optional.empty(); }
+
+public interface UserRepository extends JpaRepository<UserAccount, Long> {
+  public UserAccount findByEmail(String email);
+  public UserAccount findById(long Id);
 }

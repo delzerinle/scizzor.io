@@ -52,7 +52,7 @@ public class RegistrationListener
         + "/registrationConfirm.html?token="
         + token;
     String message = messageSource.getMessage(
-        "message.regSuccess", null, event.getLocale());
+        "message.regSuccess", null, "Click to complete email verification.", event.getLocale());
   
     SimpleMailMessage email = new SimpleMailMessage();
     email.setTo(recipientAddress);

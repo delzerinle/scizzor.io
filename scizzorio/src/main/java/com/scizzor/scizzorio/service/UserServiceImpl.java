@@ -3,13 +3,9 @@ package com.scizzor.scizzorio.service;
 import static com.scizzor.scizzorio.enums.UserRole.BRAND;
 import static com.scizzor.scizzorio.enums.UserRole.CUSTOMER;
 
-import com.scizzor.scizzorio.entity.BrandVerificationToken;
-import com.scizzor.scizzorio.entity.CustomerVerificationToken;
 import com.scizzor.scizzorio.entity.VerificationToken;
 import com.scizzor.scizzorio.exceptions.EmailExistsException;
-import com.scizzor.scizzorio.model.BrandAccount;
 import com.scizzor.scizzorio.model.dto.BrandAccountDto;
-import com.scizzor.scizzorio.model.CustomerAccount;
 import com.scizzor.scizzorio.model.dto.CustomerAccountDto;
 import com.scizzor.scizzorio.model.UserAccount;
 import com.scizzor.scizzorio.model.dto.UserAccountDto;
@@ -20,6 +16,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 @Service
 @Transactional
@@ -37,21 +34,26 @@ public class UserServiceImpl implements UserService {
   }
   
   @Override
-  public Optional<UserAccount> registerNewUserAccount(UserAccountDto userAccountDto) throws EmailExistsException {
+  public Optional<UserAccount> registerNewUserAccount(
+      UserAccountDto userAccountDto,
+      BindingResult bindingResult) throws EmailExistsException
+  {
     String email = userAccountDto.getEmail();
     if (emailExists(email)) {
+      bindingResult.rejectValue("email", "duplicate email");
       throw new EmailExistsException(
           String.format("An account exists with this email address: %s", email));
     }
-    Optional<UserAccount> userAccount = Optional.empty();
     UserRole userRole = userAccountDto.getRole();
+    UserAccount userAccount = null;
     if (userRole.equals(BRAND)) {
-      userAccount = Optional.of(createNewBrandAccount(userAccountDto));
+      userAccount = createNewBrandAccount(userAccountDto);
     }
     if(userRole.equals(CUSTOMER)) {
-      userAccount = Optional.of(createNewCustomerAccount(userAccountDto));
+      userAccount = createNewCustomerAccount(userAccountDto);
     }
-    return userAccount.isEmpty() ? userAccount : userRepository.save(userAccount.get());
+    userAccount = userAccount != null ? userRepository.save(userAccount) : null;
+    return Optional.ofNullable(userAccount);
   }
   
   @Override
@@ -60,22 +62,13 @@ public class UserServiceImpl implements UserService {
   }
   
   @Override
-  public void saveRegisteredUser(UserAccount user) {
-    userRepository.save(user);
+  public UserAccount saveRegisteredUser(UserAccount user) {
+    return userRepository.save(user);
   }
   
   @Override
   public void createVerificationToken(UserAccount user, String token) {
-    Optional<VerificationToken> verificationToken = Optional.empty();
-    switch(user.getRole()) {
-      case BRAND:
-        verificationToken = Optional.of(new BrandVerificationToken(token, user));
-        break;
-      case CUSTOMER:
-        verificationToken = Optional.of(new CustomerVerificationToken(token, user));
-        break;
-    }
-    verificationToken.ifPresent(aToken -> tokenRepository.save(aToken));
+    tokenRepository.save(new VerificationToken(token, user));
   }
   
   @Override
@@ -84,34 +77,33 @@ public class UserServiceImpl implements UserService {
   }
   
   private boolean emailExists(String email) {
-    Optional<UserAccount> userAccount = userRepository.findByEmail(email);
-    return userAccount.isPresent();
+    UserAccount userAccount = userRepository.findByEmail(email);
+    return userAccount != null;
   }
   
-  private CustomerAccount createNewCustomerAccount(UserAccountDto userAccountDto) {
-    CustomerAccount customerAccount = new CustomerAccount();
+  private UserAccount createNewCustomerAccount(UserAccountDto userAccountDto) {
     CustomerAccountDto customerAccountDto = (CustomerAccountDto) userAccountDto;
-    customerAccount.setFirstName(customerAccountDto.getFirstName());
-    customerAccount.setLastName(customerAccountDto.getLastName());
-    customerAccount.setEmail(customerAccountDto.getEmail());
-    customerAccount.setPassword(customerAccountDto.getPassword());
-    customerAccount.setTelephoneNumber(customerAccountDto.getTelephoneNumber());
-    customerAccount.setGender(customerAccountDto.getGender());
-    customerAccount.setRole(customerAccountDto.getRole());
-    return customerAccount;
+    return new UserAccount(
+        customerAccountDto.getFirstName(),
+        customerAccountDto.getLastName(),
+        customerAccountDto.getPassword(),
+        customerAccountDto.getEmail(),
+        customerAccountDto.getTelephoneNumber(),
+        customerAccountDto.getRole(),
+        customerAccountDto.getGender()
+    );
   }
   
-  private BrandAccount createNewBrandAccount(UserAccountDto userAccountDto) {
-    BrandAccount brandAccount = new BrandAccount();
+  private UserAccount createNewBrandAccount(UserAccountDto userAccountDto) {
     BrandAccountDto brandAccountDto = (BrandAccountDto) userAccountDto;
-    brandAccount.setBrandName(brandAccountDto.getBrandName());
-    brandAccount.setFirstName(brandAccountDto.getFirstName());
-    brandAccount.setLastName(brandAccountDto.getLastName());
-    brandAccount.setEmail(brandAccountDto.getEmail());
-    brandAccount.setPassword(brandAccountDto.getPassword());
-    brandAccount.setTelephoneNumber(brandAccountDto.getTelephoneNumber());
-    brandAccount.setRole(userAccountDto.getRole());
-    return brandAccount;
+    return new UserAccount(
+        brandAccountDto.getBrandName(),
+        brandAccountDto.getFirstName(),
+        brandAccountDto.getLastName(),
+        brandAccountDto.getPassword(),
+        brandAccountDto.getEmail(),
+        brandAccountDto.getTelephoneNumber(),
+        userAccountDto.getRole()
+    );
   }
-  
 }
