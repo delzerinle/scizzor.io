@@ -24,10 +24,12 @@ module.exports = {
         };
       },
       spacing: {
+        '44': '11rem',
         '72': '18rem',
         '80': '20rem',
         '88': '22rem',
         '100': '25rem',
+        '120': '30rem',
       },
       boxShadow: {
         outline: '0 0 0 3px rgba(192, 149, 88, 0.5)',
