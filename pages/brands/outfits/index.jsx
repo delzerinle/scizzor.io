@@ -1,10 +1,19 @@
 import { SEO, BrandsLayout, BrandsTitleBanner, ApparelCard } from '@components';
 
-const Apparel = () => (
+const Outfits = () => (
   <>
     <SEO title="Title" description="description" />
     <BrandsLayout>
-      <BrandsTitleBanner />
+      <BrandsTitleBanner
+        btnText="Add New Outfit"
+        description="Here you'd find outfits that you've added"
+        title={
+          <>
+            Your Outfits -{' '}
+            <span className="text-xl text-primary">6 Outfits Added</span>
+          </>
+        }
+      />
       <div className="flex flex-wrap mt-2 px-3 md:-mx-2 md:px-0 md:mt-0">
         <ApparelCard
           imageSrc="/images/apparel1.jpg"
@@ -27,4 +36,4 @@ const Apparel = () => (
   </>
 );
 
-export default Apparel;
+export default Outfits;

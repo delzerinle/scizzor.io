@@ -184,7 +184,13 @@ p {
 
 .landing-page-grid--item:nth-child(6) {
   top: calc((18rem * 3) - 6rem);
-  
+}
+
+.active-tab::after {
+  content: '';
+  bottom: -7px;
+  border-top-width: 3px;
+  @apply absolute w-full left-0 border-primary;
 }
 
 /* Media Queries */

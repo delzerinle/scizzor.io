@@ -1,32 +1,38 @@
+import Link from 'next/link';
+
 const BrandsLayout = ({ children }) => (
   <div className="w-full flex max-w-screen-xl min-h-screen mx-auto bg-alt-3 md:bg-gray-200">
-    <div className="hidden w-48 flex-shrink-0 mt-12 px-5 md:block">
+    <div className="hidden w-48 flex-shrink-0 px-5 pt-12 h-screen sticky top-0 md:block">
       <ul>
         <li className="text-alt-3 mb-2">
-          <a className="text-sm font-medium p-2 -mx-2 block bg-secondary">
-            <span className="flex items-center">
-              <svg
-                className="w-6 h-6 mr-2 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M6.53 3.333c.327 1.01 1.757 1.771 3.47 1.771 1.713 0 3.143-.76 3.47-1.77h.924a.831.831 0 01.182 0h.007c.251 0 .476.11.63.286l3.612 2.086c.399.23.535.74.305 1.138l-1.38 2.39a.833.833 0 01-1.139.306l-1.194-.69v7.816c0 .46-.373.834-.834.834H5.417a.833.833 0 01-.834-.834V8.85l-1.194.69a.833.833 0 01-1.138-.306l-1.38-2.39a.833.833 0 01.305-1.138l3.61-2.085a.831.831 0 01.63-.288h.009a.832.832 0 01.182 0h.922z" />
-              </svg>
-              Outfits
-            </span>
-          </a>
+          <Link href="/brands/outfits">
+            <a className="text-sm font-medium p-2 -mx-2 block bg-secondary">
+              <span className="flex items-center">
+                <svg
+                  className="w-6 h-6 mr-2 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M6.53 3.333c.327 1.01 1.757 1.771 3.47 1.771 1.713 0 3.143-.76 3.47-1.77h.924a.831.831 0 01.182 0h.007c.251 0 .476.11.63.286l3.612 2.086c.399.23.535.74.305 1.138l-1.38 2.39a.833.833 0 01-1.139.306l-1.194-.69v7.816c0 .46-.373.834-.834.834H5.417a.833.833 0 01-.834-.834V8.85l-1.194.69a.833.833 0 01-1.138-.306l-1.38-2.39a.833.833 0 01.305-1.138l3.61-2.085a.831.831 0 01.63-.288h.009a.832.832 0 01.182 0h.922z" />
+                </svg>
+                Outfits
+              </span>
+            </a>
+          </Link>
         </li>
         <li className="text-secondary hover:text-alt-3 mb-2">
-          <a className="text-sm font-light p-2 -mx-2 block hover:bg-secondary">
-            <span className="flex items-center">
-              <svg
-                className="w-6 h-6 mr-2 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M15.055 14.66a3.221 3.221 0 00-3.26 1.09l-.75-1.886a.204.204 0 01.078-.246 11.789 11.789 0 005.544-9.73c0-.868-.105-1.731-.314-2.573a.417.417 0 00-.779-.083l-5.386 11.042a.209.209 0 01-.375 0L4.425 1.234a.417.417 0 00-.78.083c-.207.841-.311 1.704-.312 2.57a11.788 11.788 0 005.545 9.735.205.205 0 01.079.246l-.75 1.887A3.215 3.215 0 105.714 21a3.261 3.261 0 002.934-1.855L10 15.75l1.377 3.45a3.229 3.229 0 105.192-3.69 3.198 3.198 0 00-1.514-.85zm-7.793 3.465l-.138.345a1.568 1.568 0 01-2.27.602 1.547 1.547 0 112.408-1.287v.34zm7.024 1.208a1.558 1.558 0 01-1.385-.804l-.167-.41v-.333a1.548 1.548 0 111.552 1.547z" />
-              </svg>
-              Measurements
-            </span>
-          </a>
+          <Link href="/brands/measurements">
+            <a className="text-sm font-light p-2 -mx-2 block hover:bg-secondary">
+              <span className="flex items-center">
+                <svg
+                  className="w-6 h-6 mr-2 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M15.055 14.66a3.221 3.221 0 00-3.26 1.09l-.75-1.886a.204.204 0 01.078-.246 11.789 11.789 0 005.544-9.73c0-.868-.105-1.731-.314-2.573a.417.417 0 00-.779-.083l-5.386 11.042a.209.209 0 01-.375 0L4.425 1.234a.417.417 0 00-.78.083c-.207.841-.311 1.704-.312 2.57a11.788 11.788 0 005.545 9.735.205.205 0 01.079.246l-.75 1.887A3.215 3.215 0 105.714 21a3.261 3.261 0 002.934-1.855L10 15.75l1.377 3.45a3.229 3.229 0 105.192-3.69 3.198 3.198 0 00-1.514-.85zm-7.793 3.465l-.138.345a1.568 1.568 0 01-2.27.602 1.547 1.547 0 112.408-1.287v.34zm7.024 1.208a1.558 1.558 0 01-1.385-.804l-.167-.41v-.333a1.548 1.548 0 111.552 1.547z" />
+                </svg>
+                Measurements
+              </span>
+            </a>
+          </Link>
         </li>
         <li className="text-secondary hover:text-alt-3">
           <a className="text-sm font-light p-2 -mx-2 block hover:bg-secondary">
