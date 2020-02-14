@@ -16,10 +16,12 @@ export { default as CustomerSignUpForm } from './Forms/CustomerSignUpForm';
 export { default as Tab } from './Tab';
 export { default as Tabs } from './Tabs';
 export { default as ApparelCard } from './ApparelCard';
+export { default as AppointmentTable } from './AppointmentTable';
 export { default as BrandsTitleBanner } from './BrandsTitleBanner';
 export { default as BrandDashboardCounter } from './BrandDashboardCounter';
 export { default as AppointmentApparelCard } from './AppointmentApparelCard';
 export { default as AppointmentSummaryCard } from './AppointmentSummaryCard';
+export { default as BrandsDesktopTitleBanner } from './BrandsDesktopTitleBanner';
 
 // misc - customers
 export { default as Accordion } from './Accordion';

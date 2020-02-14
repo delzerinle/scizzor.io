@@ -8,7 +8,11 @@ const AppointmentApparelCard = ({
   className = '',
 }) => (
   <div className={`mt-8 ${className}`}>
-    <img src={imageSrc} className="w-full mb-3 h-48 object-cover" alt="" />
+    <img
+      src={imageSrc}
+      className="w-full mb-3 h-48 object-cover lg:h-64"
+      alt=""
+    />
     <p className="font-medium">
       <span className="text-secondary font-light">For </span> {name}
     </p>

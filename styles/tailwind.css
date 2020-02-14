@@ -114,6 +114,10 @@ p {
   @apply btn  py-2 px-10;
 }
 
+.btn-xs {
+  @apply btn py-1 px-6;
+}
+
 .btn-alt-sm {
   @apply btn-alt py-3 px-10;
 }

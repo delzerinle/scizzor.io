@@ -35,4 +35,11 @@ describe('BrandsTitleBanner tests', () => {
     );
     expect(wrapper.find('button').text()).toEqual('test btn');
   });
+
+  it('renders with className prop', () => {
+    const wrapper = shallow(
+      <BrandsTitleBanner description="test description" className="testClass" />
+    );
+    expect(wrapper.hasClass('testClass')).toBe(true);
+  });
 });
