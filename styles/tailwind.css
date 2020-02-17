@@ -136,6 +136,57 @@ p {
   @apply border-primary;
 }
 
+.linear-gradient::after {
+  content: '';
+  @apply absolute inset-0 z-10;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    #000000;
+  mix-blend-mode: multiply;
+}
+
+.landing-page-step--item::before {
+  content: '';
+  @apply absolute h-3 w-3 border border-black rounded-full left-0 mt-2;
+}
+
+.landing-page-step--item:first-child::before {
+  @apply bg-primary border-primary;
+}
+
+.landing-page-step--item:not(:last-child)::after {
+  content: '';
+  @apply absolute border-0 border-l border-black top-0 left-0 mt-5;
+  height: calc(100% - 0.75rem);
+  margin-left: 0.344rem;
+}
+
+.landing-page-grid--item:nth-child(1) {
+  top: -6rem;
+}
+
+.landing-page-grid--item:nth-child(2) {
+  top: calc(18rem - 6rem);
+}
+
+.landing-page-grid--item:nth-child(3) {
+  top: calc((18rem * 2) - 6rem);
+}
+
+.landing-page-grid--item:nth-child(4) {
+  top: calc(-6rem * 2);
+  left: calc(14rem - 1px);
+}
+
+.landing-page-grid--item:nth-child(5) {
+  top: calc(18rem - (6rem * 2));
+  left: calc(14rem - 1px);
+}
+
+.landing-page-grid--item:nth-child(6) {
+  top: calc((18rem * 3) - 6rem);
+  
+}
+
 /* Media Queries */
 @screen md {
   .w-360 {
