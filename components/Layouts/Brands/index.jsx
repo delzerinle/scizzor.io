@@ -50,7 +50,7 @@ const BrandsLayout = ({ children }) => (
       </ul>
     </div>
     <div className="flex-1 flex flex-col">
-      <div className="h-20 flex-shrink-0 flex justify-between items-center px-5 md:h-12 md:pl-0">
+      <div className="h-20 flex-shrink-0 flex justify-between items-center px-3 md:h-12 md:pl-0">
         <button className="p-1 mt-5 text-black focus:outline-none hover:text-primary focus:text-primary md:hidden">
           <svg
             className="h-4 w-4 stroke-current"

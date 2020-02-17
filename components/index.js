@@ -15,6 +15,7 @@ export { default as CustomerSignUpForm } from './Forms/CustomerSignUpForm';
 // misc - brands
 export { default as Tab } from './Tab';
 export { default as Tabs } from './Tabs';
+export { default as BackToPage } from './BackToPage';
 export { default as ApparelCard } from './ApparelCard';
 export { default as AppointmentTable } from './AppointmentTable';
 export { default as BrandsTitleBanner } from './BrandsTitleBanner';

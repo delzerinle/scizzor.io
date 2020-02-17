@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import Link from 'next/link';
 
 import {
   SEO,
@@ -78,7 +79,7 @@ const Measurements = () => {
             </>
           }
         />
-        <div className="px-5 md:pt-5">
+        <div className="px-3 md:px-0 md:pt-5">
           <div className="border-b border-alt-2 py-4 flex flex-wrap">
             <BrandDashboardCounter
               count={15}
@@ -95,12 +96,11 @@ const Measurements = () => {
           <div className="pt-8">
             <div className="flex justify-between items-end md:justify-start md:items-end">
               <p className="font-medium md:mr-6">Recently Added Appointments</p>
-              <a
-                href="#"
-                className="text-primary font-medium md:text-sm md:pb-1 md:leading-5"
-              >
-                See All
-              </a>
+              <Link href="/brands/appointments">
+                <a className="text-primary font-medium md:text-sm md:pb-1 md:leading-5">
+                  See All
+                </a>
+              </Link>
             </div>
           </div>
 
