@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputFieldWithoutLabel tests input field snapshot 1`] = `
+<div
+  className="border w-full border-alt-2 field-input mb-4"
+>
+  <div
+    className="px-4 py-2 relative"
+  >
+    <Field
+      className="w-full focus:outline-none bg-transparent font-light text-sm placeholder-secondary"
+      id="test"
+      name="test"
+      placeholder="test"
+      type="text"
+    />
+    <FormikConnect(ErrorMessageImpl)
+      className="p-sm absolute text-secondary pt-2"
+      component="p"
+      name="test"
+    />
+  </div>
+</div>
+`;
+
+exports[`InputFieldWithoutLabel tests input field with icon snapshot 1`] = `
+<div
+  className="flex border w-full border-alt-2 field-input mb-4"
+>
+  <div
+    className="px-4 flex items-center"
+  >
+    test
+  </div>
+  <div
+    className="flex-1 px-4 py-2 relative -ml-4"
+  >
+    <Field
+      className="w-full focus:outline-none bg-transparent font-light text-sm placeholder-secondary"
+      id="test"
+      name="test"
+      placeholder="test"
+      type="text"
+    />
+    <FormikConnect(ErrorMessageImpl)
+      className="p-sm absolute text-secondary pt-2"
+      component="p"
+      name="test"
+    />
+  </div>
+</div>
+`;

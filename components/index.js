@@ -10,6 +10,7 @@ export { default as MobileMenuDrawer } from './MobileMenuDrawer';
 // forms
 export { default as SignInForm } from './Forms/SignInForm';
 export { default as BrandSignUpForm } from './Forms/BrandSignUpForm';
+export { default as MeasurementsForm } from './Forms/MeasurementsForm';
 export { default as CustomerSignUpForm } from './Forms/CustomerSignUpForm';
 
 // misc - brands
