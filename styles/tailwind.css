@@ -197,9 +197,20 @@ p {
   @apply absolute w-full left-0 border-primary;
 }
 
+.avatar-cam-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* Media Queries */
 @screen md {
   .w-360 {
     width: 360px;
+  }
+
+  .avatar-cam-center {
+    @apply left-0;
+    transform: translate(-50%, 0);
   }
 }
