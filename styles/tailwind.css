@@ -203,6 +203,21 @@ p {
   transform: translate(-50%, -50%);
 }
 
+#wizard-form::before {
+  content: '';
+  top: 50%;
+  transform: translateY(-50%);
+  @apply absolute w-full border-t border-alt-2;
+}
+
+#wizard-form li > button {
+  padding-top: 0.1rem;
+}
+
+.wizard-slider {
+  max-width: calc(100vw - 1.5rem);
+}
+
 /* Media Queries */
 @screen md {
   .w-360 {
@@ -212,5 +227,9 @@ p {
   .avatar-cam-center {
     @apply left-0;
     transform: translate(-50%, 0);
+  }
+
+  .wizard-slider {
+    max-width: 30rem;
   }
 }

@@ -21,6 +21,7 @@ module.exports = {
       maxWidth: theme => {
         return {
           'screen-xl': theme('screens.xl'),
+          screen: '100vw',
         };
       },
       spacing: {

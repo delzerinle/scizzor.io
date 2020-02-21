@@ -12,6 +12,7 @@ export { default as SignInForm } from './Forms/SignInForm';
 export { default as BrandSignUpForm } from './Forms/BrandSignUpForm';
 export { default as MeasurementsForm } from './Forms/MeasurementsForm';
 export { default as CustomerSignUpForm } from './Forms/CustomerSignUpForm';
+export { default as AddOutfitsWizardForm } from './Forms/AddOutfitsWizardForm';
 export { default as BrandsUpdateProfileForm } from './Forms/BrandsUpdateProfileForm';
 export { default as BrandsUpdatePasswordForm } from './Forms/BrandsUpdatePasswordForm';
 
