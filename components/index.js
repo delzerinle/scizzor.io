@@ -27,6 +27,7 @@ export { default as BrandDashboardCounter } from './BrandDashboardCounter';
 export { default as AppointmentApparelCard } from './AppointmentApparelCard';
 export { default as AppointmentSummaryCard } from './AppointmentSummaryCard';
 export { default as BrandsDesktopTitleBanner } from './BrandsDesktopTitleBanner';
+export { default as AddOutfitQuestionWrapper } from './AddOutfitQuestionWrapper';
 
 // misc - customers
 export { default as Accordion } from './Accordion';

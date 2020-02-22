@@ -15,10 +15,12 @@ const AddOutfitsWizardForm = ({
     dots: false,
     swipe: false,
     arrows: false,
+    slidesToShow: 1,
     infinite: false,
     draggable: false,
+    slidesToScroll: 1,
     adaptiveHeight: true,
-    accessibility: false,
+    // accessibility: false,
     className: 'wizard-slider w-full',
   };
 

@@ -230,6 +230,6 @@ p {
   }
 
   .wizard-slider {
-    max-width: 30rem;
+    max-width: calc(100vw - 14.5rem);
   }
 }
