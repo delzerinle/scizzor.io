@@ -27,3 +27,4 @@ export { default as LandingPageFavBrandsBanner } from './LandingPageFavBrandsBan
 export { default as LandingPageBrandSignupBanner } from './LandingPageBrandSignupBanner';
 export { default as Accordion } from './Accordion';
 export { default as AccordionSection } from './AccordionSection';
+export { default as FormErrorMessage } from './FormErrorMessage';
