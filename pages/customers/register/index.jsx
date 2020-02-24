@@ -1,12 +1,19 @@
 import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import { SEO, Auth, CustomerSignUpForm } from '@components';
+import Client from '@api/apiClient';
+import AuthContext from "../../../context/auth-context";
 
 const CustomersRegister = () => {
   const router = useRouter();
 
   const handleSubmit = async values => {
-    console.log(values);
-    // router.push('/brands/verify');
+    Client.registerCustomer(values, data => {
+      data && console.log(data);
+      if (data.success) {
+        router.push('/brands/verify');
+      }
+    });
   };
 
   return (

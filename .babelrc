@@ -7,7 +7,9 @@
         "root": ["."],
         "alias": {
           "@components": "./components",
-          "@helpers": "./helpers"
+          "@helpers": "./helpers",
+          "@api": "./api",
+          "@context": "./context"
         }
       }
     ]

@@ -1,12 +1,23 @@
 import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import { SEO, Auth, SignInForm } from '@components';
+import Client from '@api/apiClient';
+import AuthContext from "@context/auth-context";
 
 const BrandsSignIn = () => {
   const router = useRouter();
+  const store = useContext(AuthContext);
 
   const handleSubmit = async values => {
-    console.log(values);
-    router.push('/brands/apparel');
+    Client.authenticateUser(values, response => {
+      response && console.log(response);
+      if (response.success === 'true') {
+        store.login(response.data.token, response.data.tokenExpiration);
+        router.push('/');
+      } else {
+        console.log(response);
+      }
+    });
   };
 
   return (
@@ -19,7 +30,7 @@ const BrandsSignIn = () => {
         <p className="mt-5">Forgot your password?</p>
         <p>
           Don't have an account?{' '}
-          <span className="text-primary">Create one here</span>
+          <a href="/brands/register" className="text-primary">Create one here</a>
         </p>
       </Auth>
     </>

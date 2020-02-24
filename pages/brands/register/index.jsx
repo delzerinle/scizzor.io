@@ -1,12 +1,20 @@
 import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import { SEO, Auth, BrandSignUpForm } from '@components';
+import Client from '@api/apiClient';
+import AuthContext from "../../../context/auth-context";
 
 const BrandsRegister = () => {
   const router = useRouter();
+  const store = useContext(AuthContext);
 
   const handleSubmit = async values => {
-    console.log(values);
-    router.push('/brands/verify');
+    Client.registerBrand(values, data => {
+      data && console.log(data);
+      if (data.status === 200) {
+        router.push('/brands/verify');
+      }
+    });
   };
 
   return (
