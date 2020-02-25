@@ -20,6 +20,7 @@ export { default as BrandsUpdatePasswordForm } from './Forms/BrandsUpdatePasswor
 export { default as Tab } from './Tab';
 export { default as Tabs } from './Tabs';
 export { default as BackToPage } from './BackToPage';
+export { default as ImageSelect } from './ImageSelect';
 export { default as ApparelCard } from './ApparelCard';
 export { default as AppointmentTable } from './AppointmentTable';
 export { default as BrandsTitleBanner } from './BrandsTitleBanner';
@@ -27,7 +28,7 @@ export { default as BrandDashboardCounter } from './BrandDashboardCounter';
 export { default as AppointmentApparelCard } from './AppointmentApparelCard';
 export { default as AppointmentSummaryCard } from './AppointmentSummaryCard';
 export { default as BrandsDesktopTitleBanner } from './BrandsDesktopTitleBanner';
-export { default as AddOutfitQuestionWrapper } from './AddOutfitQuestionWrapper';
+export { default as WizardFormQuestionWrapper } from './WizardFormQuestionWrapper';
 
 // misc - customers
 export { default as Accordion } from './Accordion';

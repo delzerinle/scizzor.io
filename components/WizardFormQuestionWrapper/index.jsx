@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const AddOutfitQuestionWrapper = ({ children, title, description }) => {
+const WizardFormQuestionWrapper = ({ children, title, description }) => {
   return (
     <div className="mt-8">
       <h4 data-testid="title" className="text-center">
@@ -17,10 +17,10 @@ const AddOutfitQuestionWrapper = ({ children, title, description }) => {
   );
 };
 
-AddOutfitQuestionWrapper.propTypes = {
+WizardFormQuestionWrapper.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   description: PropTypes.string.isRequired,
 };
 
-export default AddOutfitQuestionWrapper;
+export default WizardFormQuestionWrapper;
