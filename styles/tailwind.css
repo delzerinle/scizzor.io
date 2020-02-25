@@ -218,6 +218,41 @@ p {
   max-width: calc(100vw - 1.5rem);
 }
 
+/* Range Slider Modifications */
+.input-range__track {
+  height: 0.2rem;
+}
+
+.input-range__slider {
+  @apply bg-alt-1 border-alt-1;
+}
+
+.input-range__track--active {
+  @apply bg-alt-1;
+}
+
+.input-range__label {
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+}
+
+.input-range__label--value {
+  top: -2rem;
+  @apply text-secondary font-light mb-2;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+  @apply text-alt-1 text-base;
+}
+
+.input-range__label--min {
+  @apply ml-4;
+}
+
+.input-range__label--max {
+  @apply mr-6;
+}
+
 /* Media Queries */
 @screen md {
   .w-360 {

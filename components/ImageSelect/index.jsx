@@ -9,7 +9,7 @@ const ImageSelect = ({ title, imgSrc, className = '' }) => {
           alt={title}
           className="object-cover h-40 mx-auto mb-2"
         />
-        <p className="text-xs text-center">{title}</p>
+        <p className="text-xs text-center md:leading-none">{title}</p>
       </div>
     </div>
   );

@@ -34,8 +34,8 @@ const AddOutfitsWizardForm = ({
       }}
     >
       {({ errors, touched, isSubmitting }) => (
-        <Form>
-          <div className="md:flex md:justify-between md:items-center">
+        <Form className="flex-1 flex flex-col">
+          <div className="flex-shrink-0 md:flex md:justify-between md:items-center">
             <p
               data-testid="title"
               className="font-medium md:w-40 md:flex-shrink-0"
@@ -78,21 +78,25 @@ const AddOutfitsWizardForm = ({
             </div>
           </div>
 
-          <div>
-            <Slider {...settings}>
-              {Children.map(children, child => (
-                <div className="w-full focus:outline-none">{child}</div>
-              ))}
-            </Slider>
-          </div>
+          <div className="flex flex-col flex-1">
+            <div className="flex-shrink-0">
+              <Slider {...settings}>
+                {Children.map(children, child => (
+                  <div className="w-full focus:outline-none">{child}</div>
+                ))}
+              </Slider>
+            </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="btn-sm w-full mt-8 md:mt-2 focus:outline-none focus:shadow-outline md:hidden"
-          >
-            Next
-          </button>
+            <div className="flex-1 flex flex-col justify-end">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className=" btn-sm w-full mt-8 md:mt-2 focus:outline-none focus:shadow-outline md:hidden"
+              >
+                Next
+              </button>
+            </div>
+          </div>
         </Form>
       )}
     </Formik>
