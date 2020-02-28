@@ -131,8 +131,14 @@ p {
 }
 
 .field-input .field-input__field:focus ~ .field-input__label,
-.field-input .field-input__field:not([value='']) ~ .field-input__label {
+.field-input .field-input__field:not(:empty) ~ .field-input__label {
   transform: translateY(-14px);
+  @apply p-sm bg-alt-3 py-0 px-1 ml-4;
+}
+
+.field-input .field-textarea__field:focus ~ .field-textarea__label,
+.field-input .field-textarea__field:not(:empty) ~ .field-textarea__label {
+  transform: translateY(-22px);
   @apply p-sm bg-alt-3 py-0 px-1 ml-4;
 }
 

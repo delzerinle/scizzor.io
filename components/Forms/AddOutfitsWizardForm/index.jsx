@@ -1,27 +1,38 @@
-import React, { Children } from 'react';
+import React, { Children, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { Formik, Form } from 'formik';
 
 const AddOutfitsWizardForm = ({
   title,
-  children,
   onSubmit,
+  children,
   initialValues,
+  goToSlideIndex,
   validationSchema,
+  onSubmitBtnClick,
+  maxCompletedSlide,
+  setCurrentSlideIndex,
+  setMaxCompletedSlide,
 }) => {
+  const slickSlider = useRef(null);
   const slidesCount = Children.count(children);
   const settings = {
     dots: false,
     swipe: false,
     arrows: false,
+    lazyLoad: true,
     slidesToShow: 1,
     infinite: false,
     draggable: false,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    // accessibility: false,
+    accessibility: false,
     className: 'wizard-slider w-full',
+    beforeChange: (_, next) => {
+      setCurrentSlideIndex(next);
+      next > maxCompletedSlide && setMaxCompletedSlide(next);
+    },
   };
 
   return (
@@ -33,7 +44,7 @@ const AddOutfitsWizardForm = ({
         actions.setSubmitting(false);
       }}
     >
-      {({ errors, touched, isSubmitting }) => (
+      {formikBag => (
         <Form className="flex-1 flex flex-col">
           <div className="flex-shrink-0 md:flex md:justify-between md:items-center">
             <p
@@ -49,16 +60,23 @@ const AddOutfitsWizardForm = ({
                 className="relative mt-4 inline-flex w-full justify-around md:mt-0 lg:ml-32"
               >
                 {Array.from({ length: slidesCount }).map((_, i) => {
-                  const ClassList = 'text-secondary bg-white border-alt-2';
+                  const classList =
+                    'text-secondary bg-white border-alt-2 cursor-not-allowed focus:outline-none';
                   const completedClassList =
-                    'text-white bg-primary border-primary';
+                    'text-white bg-primary border-primary focus:outline-none focus:shadow-outline focus:border-primary';
 
                   return (
                     <li key={i}>
                       <button
                         type="button"
-                        className={`text-sm border rounded-full h-6 w-6 flex justify-center items-center relative z-10 focus:outline-none focus:shadow-outline focus:border-primary hover:border-primary hover:shadow-outline ${
-                          i === 0 ? completedClassList : ClassList
+                        onClick={() =>
+                          i <= maxCompletedSlide &&
+                          goToSlideIndex(i, slickSlider)
+                        }
+                        className={`text-sm border rounded-full h-6 w-6 flex justify-center items-center relative z-10  hover:border-primary hover:shadow-outline ${
+                          i <= maxCompletedSlide
+                            ? completedClassList
+                            : classList
                         }`}
                       >
                         {i + 1}
@@ -69,8 +87,9 @@ const AddOutfitsWizardForm = ({
               </ul>
 
               <button
-                type="submit"
-                disabled={isSubmitting}
+                type="button"
+                disabled={formikBag.isSubmitting}
+                onClick={() => onSubmitBtnClick(formikBag, slickSlider)}
                 className="hidden btn-sm w-auto focus:outline-none focus:shadow-outline md:block md:ml-6 lg:ml-24"
               >
                 Next
@@ -80,7 +99,7 @@ const AddOutfitsWizardForm = ({
 
           <div className="flex flex-col flex-1">
             <div className="flex-shrink-0">
-              <Slider {...settings}>
+              <Slider ref={slickSlider} {...settings}>
                 {Children.map(children, child => (
                   <div className="w-full focus:outline-none">{child}</div>
                 ))}
@@ -89,8 +108,9 @@ const AddOutfitsWizardForm = ({
 
             <div className="flex-1 flex flex-col justify-end">
               <button
-                type="submit"
-                disabled={isSubmitting}
+                type="button"
+                disabled={formikBag.isSubmitting}
+                onClick={() => onSubmitBtnClick(formikBag, slickSlider)}
                 className=" btn-sm w-full mt-8 md:mt-2 focus:outline-none focus:shadow-outline md:hidden"
               >
                 Next
@@ -107,8 +127,13 @@ AddOutfitsWizardForm.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  goToSlideIndex: PropTypes.func.isRequired,
   validationSchema: PropTypes.any.isRequired,
   initialValues: PropTypes.object.isRequired,
+  onSubmitBtnClick: PropTypes.func.isRequired,
+  maxCompletedSlide: PropTypes.number.isRequired,
+  setCurrentSlideIndex: PropTypes.func.isRequired,
+  setMaxCompletedSlide: PropTypes.func.isRequired,
 };
 
 export default AddOutfitsWizardForm;

@@ -2,19 +2,65 @@ import React, { useState } from 'react';
 import { object, string, number } from 'yup';
 import InputRange from 'react-input-range';
 
+import { ImageDragNDrop } from '@components';
 import InputField from '@components/Forms/formElements/InputField';
+import InputTextArea from '@components/Forms/formElements/InputTextArea';
 
 import {
   SEO,
   BackToPage,
   ImageSelect,
   BrandsLayout,
+  SectionGroup,
   AddOutfitsWizardForm,
   WizardFormQuestionWrapper,
 } from '@components';
 
 const AddOutfits = () => {
+  const sliderLength = 4;
   const [timeLine, setTimeLine] = useState({ min: 2, max: 3 });
+  const [maxCompletedSlide, setMaxCompletedSlide] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const goToSlideIndex = (index, slickRef) => {
+    // validate
+    const isSlideFieldValid = validateSlideFields(currentSlideIndex);
+
+    if (!isSlideFieldValid) {
+      return;
+    }
+
+    if (index === currentSlideIndex) {
+      return;
+    }
+
+    const { current } = slickRef;
+    current?.slickGoTo(index);
+  };
+
+  const handleSubmitBtnClick = (formikBag, slickRef) => {
+    // validate
+    const isSlideFieldValid = validateSlideFields(currentSlideIndex);
+
+    if (!isSlideFieldValid) {
+      return;
+    }
+
+    const { submitForm } = formikBag;
+    const { current } = slickRef;
+
+    if (currentSlideIndex === sliderLength) {
+      submitForm();
+      return;
+    }
+
+    current?.slickNext();
+  };
+
+  const validateSlideFields = index => {
+    console.log(index);
+    return true;
+  };
 
   const handleSubmit = val => {
     console.log(val);
@@ -59,9 +105,45 @@ const AddOutfits = () => {
             title="Add New Outfit"
             onSubmit={handleSubmit}
             initialValues={initialValues}
+            goToSlideIndex={goToSlideIndex}
             validationSchema={validationSchema}
+            maxCompletedSlide={maxCompletedSlide}
+            onSubmitBtnClick={handleSubmitBtnClick}
+            setCurrentSlideIndex={setCurrentSlideIndex}
+            setMaxCompletedSlide={setMaxCompletedSlide}
           >
-            {/* <p>1</p> */}
+            <div className="pt-12 md:flex md:flex-wrap md:-mx-2">
+              <div className="md:w-3/5 md:px-2">
+                <SectionGroup title="Outfit Details">
+                  <InputField
+                    errors={{}}
+                    name="name"
+                    touched={{}}
+                    label="Outfit Name"
+                  />
+
+                  <InputTextArea
+                    errors={{}}
+                    touched={{}}
+                    name="description"
+                    label="Outfit Description"
+                  />
+
+                  <InputTextArea
+                    errors={{}}
+                    touched={{}}
+                    name="fabricDescription"
+                    label="Fabric Description"
+                  />
+                </SectionGroup>
+              </div>
+
+              <div className="mt-12 md:mt-0 md:w-2/5 md:px-2">
+                <SectionGroup title="Apparel Images">
+                  <ImageDragNDrop />
+                </SectionGroup>
+              </div>
+            </div>
             <WizardFormQuestionWrapper
               title="How Does Your Clothing Fit?"
               description="Have you designed it to have a loose fit on the body or slim fit?"

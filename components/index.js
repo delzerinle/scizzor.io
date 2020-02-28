@@ -22,6 +22,8 @@ export { default as Tabs } from './Tabs';
 export { default as BackToPage } from './BackToPage';
 export { default as ImageSelect } from './ImageSelect';
 export { default as ApparelCard } from './ApparelCard';
+export { default as SectionGroup } from './SectionGroup';
+export { default as ImageDragNDrop } from './ImageDragNDrop';
 export { default as AppointmentTable } from './AppointmentTable';
 export { default as BrandsTitleBanner } from './BrandsTitleBanner';
 export { default as BrandDashboardCounter } from './BrandDashboardCounter';

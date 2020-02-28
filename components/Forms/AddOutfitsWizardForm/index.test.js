@@ -9,8 +9,13 @@ describe('AddOutfitsWizardForm tests', () => {
       <AddOutfitsWizardForm
         title="test"
         initialValues={{}}
+        maxCompletedSlide={0}
         validationSchema={{}}
         onSubmit={() => jest.func()}
+        goToSlideIndex={() => jest.func()}
+        onSubmitBtnClick={() => jest.func()}
+        setCurrentSlideIndex={() => jest.func()}
+        setMaxCompletedSlide={() => jest.func()}
       >
         <div>test</div>
       </AddOutfitsWizardForm>
