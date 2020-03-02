@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { MobileMenuDrawer, MobileFooter, Footer } from '@components';
 
-const CustomersLayout = ({ children }) => {
+const CustomersLayout = ({ children, showFooter = true }) => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="w-full relative max-w-screen-xl min-h-screen mx-auto">
@@ -88,30 +90,38 @@ const CustomersLayout = ({ children }) => {
       <MobileMenuDrawer isOpen={isOpen} closeDrawer={() => setOpen(false)} />
       {children}
 
-      <MobileFooter />
-      <Footer />
-      <div className="bg-alt-2 px-5 py-4 text-center text-xs md:flex md:justify-between md:items-center">
-        <p className="flex justify-center items-center md:order-2">
-          <a href="#">Terms & Conditions</a>
-          <span className="ml-2 mr-1 md:hidden">
-            <svg
-              className="w-1 h-6 stroke-current"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M1 1v20" strokeWidth=".5" strokeLinecap="round" />
-            </svg>
-          </span>
-          <a className="md:ml-6" href="#">
-            Privacy Policy
-          </a>
-        </p>
-        <p className="leading-snug md:order-1">
-          &copy; 2019 The Scizzor Group Inc. All rights reserved
-        </p>
-      </div>
+      {showFooter && (
+        <>
+          <MobileFooter />
+          <Footer />
+          <div className="bg-alt-2 px-5 py-4 text-center text-xs md:flex md:justify-between md:items-center">
+            <p className="flex justify-center items-center md:order-2">
+              <a href="#">Terms & Conditions</a>
+              <span className="ml-2 mr-1 md:hidden">
+                <svg
+                  className="w-1 h-6 stroke-current"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1 1v20" strokeWidth=".5" strokeLinecap="round" />
+                </svg>
+              </span>
+              <a className="md:ml-6" href="#">
+                Privacy Policy
+              </a>
+            </p>
+            <p className="leading-snug md:order-1">
+              &copy; 2019 The Scizzor Group Inc. All rights reserved
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
+};
+
+CustomersLayout.propTypes = {
+  showFooter: PropTypes.bool,
 };
 
 export default CustomersLayout;

@@ -18,7 +18,7 @@ const WizardFormQuestionWrapper = ({ children, title, description }) => {
 };
 
 WizardFormQuestionWrapper.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   children: PropTypes.node.isRequired,
   description: PropTypes.string.isRequired,
 };

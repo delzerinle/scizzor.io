@@ -38,6 +38,7 @@ export { default as AccordionSection } from './AccordionSection';
 export { default as LandingPageBanner } from './LandingPageBanner';
 export { default as LandingPageProduct } from './LandingPageProduct';
 export { default as LandingPageInfoCard } from './LandingPageInfoCard';
+export { default as StyleFinderWizardForm } from './StyleFinderWizardForm';
 export { default as LandingPageCustomerCTA } from './LandingPageCustomerCTA';
 export { default as LandingPageProductSlider } from './LandingPageProductSlider';
 export { default as LandingPageDesktopInfoCard } from './LandingPageDesktopInfoCard';
