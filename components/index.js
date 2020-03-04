@@ -35,6 +35,7 @@ export { default as WizardFormQuestionWrapper } from './WizardFormQuestionWrappe
 // misc - customers
 export { default as Accordion } from './Accordion';
 export { default as CustomerTabs } from './CustomerTabs';
+export { default as OrderItemCard } from './OrderItemCard';
 export { default as AppointmentCard } from './AppointmentCard';
 export { default as AccordionSection } from './AccordionSection';
 export { default as LandingPageBanner } from './LandingPageBanner';

@@ -122,11 +122,17 @@ p {
   @apply btn-alt py-3 px-10;
 }
 
-.btn-alt-sm:hover {
+.btn-alt-xs {
+  @apply btn-alt py-2 px-6;
+}
+
+.btn-alt-sm:hover,
+.btn-alt-xs:hover {
   @apply text-alt-3 bg-primary border-primary;
 }
 
-.btn-alt-sm:focus {
+.btn-alt-sm:focus,
+.btn-alt-xs:focus {
   @apply outline-none shadow-outline;
 }
 

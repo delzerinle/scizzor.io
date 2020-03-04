@@ -1,6 +1,7 @@
 import {
   SEO,
   CustomerTabs,
+  OrderItemCard,
   CustomersLayout,
   AppointmentCard,
   MeasurementsSlider,
@@ -34,7 +35,7 @@ const CustomerSettings = () => {
               }
             >
               <div className="mb-10">
-                <h4 className="text-lg">Pending Appointments</h4>
+                <h4 className="text-xl">Pending Appointments</h4>
                 <div className="md:flex">
                   <AppointmentCard
                     dayCount={5}
@@ -53,7 +54,7 @@ const CustomerSettings = () => {
                 </div>
               </div>
 
-              <h4 className="text-lg mb-10 md:mb-5">Previous Measurements</h4>
+              <h4 className="text-xl mb-10 md:mb-5">Previous Measurements</h4>
               <MeasurementsSlider>
                 <div className="h-88">
                   <img
@@ -100,7 +101,33 @@ const CustomerSettings = () => {
                 </span>
               }
             >
-              <p>2</p>
+              <div className="mb-10">
+                <h4 className="text-xl">Your Order History</h4>
+
+                <div className="md:flex md:flex-wrap md:items-stretch md:-mx-2">
+                  <OrderItemCard
+                    name="Eleventy"
+                    orderNumber="397105187"
+                    imgSrc="/images/apparel1.jpg"
+                    className="mt-4 md:mt-4 md:w-1/3 md:px-2"
+                    description=" Classic Fit Stretch Plaid Wool Suit"
+                  />
+                  <OrderItemCard
+                    name="Canali"
+                    orderNumber="444675586"
+                    imgSrc="/images/apparel2.jpg"
+                    className="mt-8 md:mt-4 md:w-1/3 md:px-2"
+                    description=" Classic Fit Stretch Plaid Wool Suit"
+                  />
+                  <OrderItemCard
+                    name="Hickey Freeman"
+                    orderNumber="279767208"
+                    imgSrc="/images/apparel3.jpg"
+                    className="mt-8 md:mt-4 md:w-1/3 md:px-2"
+                    description=" Classic Fit Stretch Plaid Wool Suit"
+                  />
+                </div>
+              </div>
             </div>
 
             <div
