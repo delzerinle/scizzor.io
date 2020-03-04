@@ -14,9 +14,9 @@ const Tab = ({ label, onClick, activeTab, className, activeClass }) => (
 Tab.propTypes = {
   className: PropTypes.string,
   activeClass: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
-  activeTab: PropTypes.string.isRequired,
+  activeTab: PropTypes.node.isRequired,
 };
 
 export default Tab;

@@ -34,10 +34,14 @@ export { default as WizardFormQuestionWrapper } from './WizardFormQuestionWrappe
 
 // misc - customers
 export { default as Accordion } from './Accordion';
+export { default as CustomerTabs } from './CustomerTabs';
+export { default as AppointmentCard } from './AppointmentCard';
 export { default as AccordionSection } from './AccordionSection';
 export { default as LandingPageBanner } from './LandingPageBanner';
 export { default as LandingPageProduct } from './LandingPageProduct';
+export { default as MeasurementsSlider } from './MeasurementsSlider';
 export { default as LandingPageInfoCard } from './LandingPageInfoCard';
+export { default as CustomersTitleBanner } from './CustomersTitleBanner';
 export { default as StyleFinderWizardForm } from './StyleFinderWizardForm';
 export { default as LandingPageCustomerCTA } from './LandingPageCustomerCTA';
 export { default as LandingPageProductSlider } from './LandingPageProductSlider';

@@ -203,6 +203,12 @@ p {
   @apply absolute w-full left-0 border-primary;
 }
 
+.customer-tabs .active-tab::after {
+  content: '';
+  bottom: -2px;
+  border-top-width: 1px;
+}
+
 .avatar-cam-center {
   top: 50%;
   left: 50%;
@@ -222,6 +228,15 @@ p {
 
 .wizard-slider {
   max-width: calc(100vw - 1.5rem);
+}
+
+.measurement-slider .slick-prev:before,
+.measurement-slider .slick-next:before {
+  content: none;
+}
+
+.measurement-slider .slick-disabled svg {
+  @apply opacity-25;
 }
 
 /* Range Slider Modifications */
@@ -270,7 +285,19 @@ p {
     transform: translate(-50%, 0);
   }
 
+  .customer-tabs .active-tab::after {
+    content: none;
+  }
+
   .wizard-slider {
     max-width: calc(100vw - 14.5rem);
+  }
+
+  .measurement-slider {
+    max-width: calc(100vw - 15rem);
+  }
+
+  .measurement-slider .slick-slide {
+    width: 16rem !important;
   }
 }
