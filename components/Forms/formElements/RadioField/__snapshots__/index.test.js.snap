@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioField tests radio snapshot 1`] = `
+<div
+  className="test"
+>
+  <Field
+    name="test"
+  >
+    <Component />
+  </Field>
+  <label
+    className="font-medium text-sm"
+    htmlFor="test"
+  >
+    test
+  </label>
+</div>
+`;

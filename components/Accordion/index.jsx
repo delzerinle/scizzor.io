@@ -1,10 +1,25 @@
-import React, { Children, useState } from 'react';
+import React, { Children, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { AccordionSection } from '@components';
 
-const Accordion = ({ children }) => {
+const Accordion = ({
+  children,
+  labelIcon,
+  isAccordionOpen = false,
+  labelClassName = 'text-sm font-medium',
+}) => {
   const [openSections, setOpenSections] = useState({});
+
+  useEffect(() => {
+    if (isAccordionOpen) {
+      const [firstChild] = children;
+      const {
+        props: { label },
+      } = firstChild;
+      setOpenSections({ [label]: true });
+    }
+  }, [isAccordionOpen]);
 
   const onClick = label => {
     const isOpen = !!openSections[label];
@@ -19,6 +34,8 @@ const Accordion = ({ children }) => {
           <AccordionSection
             key={i}
             label={props.label}
+            labelIcon={labelIcon}
+            labelClassName={labelClassName}
             onClick={() => onClick(props.label)}
             isOpen={!!openSections[props.label]}
           >
@@ -31,6 +48,8 @@ const Accordion = ({ children }) => {
 };
 
 Accordion.propTypes = {
+  isAccordionOpen: PropTypes.bool,
+  labelClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 

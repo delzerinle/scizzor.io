@@ -1,14 +1,47 @@
 import {
   SEO,
+  Accordion,
+  VirtualCard,
   CustomerTabs,
   OrderItemCard,
   CustomersLayout,
   AppointmentCard,
   MeasurementsSlider,
   CustomersTitleBanner,
+  CustomerPaymentInfoForm,
+  CustomerAddressBookForm,
+  CustomerUpdatePersonalInfoForm,
 } from '@components';
 
 const CustomerSettings = () => {
+  const labelIcon = (
+    <svg
+      className="w-4 h-4 stroke-current transform scale-75"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <mask id="a">
+        <path d="M.7.4c.115 0 .23.044.318.132L7 6.514 12.982.532a.45.45 0 11.636.636l-6.3 6.3a.45.45 0 01-.636 0l-6.3-6.3A.45.45 0 01.7.4z" />
+      </mask>
+      <path d="M.7.4c.115 0 .23.044.318.132L7 6.514 12.982.532a.45.45 0 11.636.636l-6.3 6.3a.45.45 0 01-.636 0l-6.3-6.3A.45.45 0 01.7.4z" />
+      <path
+        d="M1.018.532l2.828-2.829L1.018.532zM7 6.514L4.17 9.342 7 12.171l2.828-2.829L7 6.514zM12.982.532l-2.829-2.829L12.982.532zm.636.636L10.79-1.66l2.828 2.828zm-6.3 6.3l2.828 2.829-2.828-2.829zm-.636 0l-2.829 2.829 2.829-2.829zm-6.3-6.3L3.21-1.66.382 1.168zm0-.636L-2.445-2.3l-.002.002L.382.532zM.7 4.4a3.552 3.552 0 01-2.51-1.04l5.656-5.657A4.448 4.448 0 00.7-3.6v8zm-2.51-1.04L4.17 9.342l5.657-5.657-5.982-5.982L-1.81 3.36zM9.828 9.342L15.81 3.36l-5.657-5.657-5.982 5.982 5.657 5.657zM15.81 3.36a3.55 3.55 0 01-5.02 0l5.656-5.657a4.45 4.45 0 00-6.293 0L15.81 3.36zm-5.02 0a3.55 3.55 0 010-5.02l5.656 5.656a4.45 4.45 0 000-6.293L10.79 3.36zm0-5.02l-6.3 6.3 5.656 5.657 6.3-6.3L10.79-1.66zm-6.3 6.3a3.55 3.55 0 015.02 0l-5.657 5.657a4.45 4.45 0 006.293 0L4.49 4.64zm5.02 0l-6.3-6.3-5.657 5.656 6.3 6.3L9.51 4.64zm-6.3-6.3a3.55 3.55 0 010 5.02l-5.657-5.657a4.45 4.45 0 000 6.293L3.21-1.66zm-.002 5.022A3.55 3.55 0 01.7 4.4v-8A4.45 4.45 0 00-2.445-2.3l5.653 5.661z"
+        mask="url(#a)"
+      />
+    </svg>
+  );
+
+  const handleUpdateForm = val => {
+    console.log(val);
+  };
+
+  const handleAddressBookForm = val => {
+    console.log(val);
+  };
+
+  const handlePaymentInfoForm = val => {
+    console.log(val);
+  };
+
   return (
     <>
       <SEO title="Title" description="description" />
@@ -153,7 +186,56 @@ const CustomerSettings = () => {
                 </span>
               }
             >
-              <p>3</p>
+              <div className="mb-10">
+                <h4 className="text-xl">Your Profile</h4>
+                <p className="text-sm leading-6 mb-5 md:mb-3">
+                  Feel free to edit any of your details below so your Scizzor
+                  account is totally up to date.
+                </p>
+
+                <Accordion
+                  isAccordionOpen
+                  labelIcon={labelIcon}
+                  labelClassName="text-base font-medium"
+                >
+                  <div label="Personal Information">
+                    <hr className="border-alt-1 mt-1" />
+                    <div className="pb-5 md:max-w-md">
+                      <CustomerUpdatePersonalInfoForm
+                        onSubmit={handleUpdateForm}
+                      />
+                    </div>
+                  </div>
+
+                  <div label="Address Book">
+                    <hr className="border-alt-1 mt-1" />
+                    <div className="pb-5 md:max-w-md">
+                      <p className="text-sm font-medium mt-4 mb-2">Address 1</p>
+                      <p className="text-sm leading-6">
+                        Contact Information (We'll only call if we need
+                        assistance delivering your order)
+                      </p>
+                      <CustomerAddressBookForm
+                        onSubmit={handleAddressBookForm}
+                      />
+                    </div>
+                  </div>
+
+                  <div label="Payment Information">
+                    <hr className="border-alt-1 mt-2" />
+                    <div className="md:max-w-md">
+                      <VirtualCard
+                        cvv="9964"
+                        expiryDate="03/2022"
+                        className="mt-6 max-w-sm"
+                      />
+                      <CustomerPaymentInfoForm
+                        onSubmit={handlePaymentInfoForm}
+                      />
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
             </div>
           </CustomerTabs>
         </div>
