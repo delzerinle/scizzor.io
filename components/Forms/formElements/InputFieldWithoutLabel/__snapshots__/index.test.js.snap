@@ -8,7 +8,7 @@ exports[`InputFieldWithoutLabel tests input field snapshot 1`] = `
     className="px-4 py-2 relative"
   >
     <Field
-      className="w-full focus:outline-none bg-transparent font-light text-sm placeholder-secondary"
+      className="w-full focus:outline-none font-light text-sm placeholder-secondary bg-transparent"
       id="test"
       name="test"
       placeholder="test"
@@ -36,7 +36,7 @@ exports[`InputFieldWithoutLabel tests input field with icon snapshot 1`] = `
     className="flex-1 px-4 py-2 relative -ml-4"
   >
     <Field
-      className="w-full focus:outline-none bg-transparent font-light text-sm placeholder-secondary"
+      className="w-full focus:outline-none font-light text-sm placeholder-secondary bg-transparent"
       id="test"
       name="test"
       placeholder="test"

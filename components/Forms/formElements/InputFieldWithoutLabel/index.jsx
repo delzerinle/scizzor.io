@@ -8,16 +8,17 @@ const InputFieldWithoutLabel = ({
   type = 'text',
   errors,
   touched,
+  fieldClassName = 'border-alt-2',
 }) => {
   const [parentKey, childKey] = name.split('.');
 
   const wrapperClass = icon
-    ? `flex border w-full border-alt-2 field-input ${
+    ? `flex border w-full ${fieldClassName} field-input ${
         errors?.[parentKey]?.[childKey] && touched?.[parentKey]?.[childKey]
           ? 'mb-10 field-error'
           : 'mb-4'
       }`
-    : `border w-full border-alt-2 field-input ${
+    : `border w-full ${fieldClassName} field-input ${
         errors?.[parentKey]?.[childKey] && touched?.[parentKey]?.[childKey]
           ? 'mb-10 field-error'
           : 'mb-4'
@@ -36,7 +37,7 @@ const InputFieldWithoutLabel = ({
           type={type}
           name={name}
           placeholder={label}
-          className="w-full focus:outline-none bg-transparent font-light text-sm placeholder-secondary"
+          className="w-full focus:outline-none font-light text-sm placeholder-secondary bg-transparent"
         />
         <ErrorMessage
           name={name}
@@ -53,6 +54,7 @@ InputFieldWithoutLabel.propTypes = {
   icon: PropTypes.node,
   errors: PropTypes.object,
   touched: PropTypes.object,
+  fieldClassName: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 };

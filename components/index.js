@@ -11,12 +11,14 @@ export { default as MobileMenuDrawer } from './MobileMenuDrawer';
 export { default as SignInForm } from './Forms/SignInForm';
 export { default as BrandSignUpForm } from './Forms/BrandSignUpForm';
 export { default as MeasurementsForm } from './Forms/MeasurementsForm';
+export { default as SelectField } from './Forms/formElements/SelectField';
 export { default as CustomerSignUpForm } from './Forms/CustomerSignUpForm';
 export { default as AddOutfitsWizardForm } from './Forms/AddOutfitsWizardForm';
 export { default as CustomerPaymentInfoForm } from './Forms/CustomerPaymentInfoForm';
 export { default as CustomerAddressBookForm } from './Forms/CustomerAddressBookForm';
 export { default as BrandsUpdateProfileForm } from './Forms/BrandsUpdateProfileForm';
 export { default as BrandsUpdatePasswordForm } from './Forms/BrandsUpdatePasswordForm';
+export { default as NewsletterSubscriptionForm } from './Forms/NewsletterSubscriptionForm';
 export { default as CustomerUpdatePersonalInfoForm } from './Forms/CustomerUpdatePersonalInfoForm';
 
 // misc - brands
@@ -39,7 +41,9 @@ export { default as WizardFormQuestionWrapper } from './WizardFormQuestionWrappe
 export { default as Accordion } from './Accordion';
 export { default as VirtualCard } from './VirtualCard';
 export { default as CustomerTabs } from './CustomerTabs';
+export { default as PairWithItem } from './PairWithItem';
 export { default as OrderItemCard } from './OrderItemCard';
+export { default as PairWithSlider } from './PairWithSlider';
 export { default as AppointmentCard } from './AppointmentCard';
 export { default as AccordionSection } from './AccordionSection';
 export { default as LandingPageBanner } from './LandingPageBanner';
