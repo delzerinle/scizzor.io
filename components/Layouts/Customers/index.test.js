@@ -4,6 +4,15 @@ import { shallow, mount } from 'enzyme';
 import CustomersLayout from './index';
 import { MobileFooter, Footer } from '@components';
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      pathname: '/',
+      push: () => null,
+    };
+  },
+}));
+
 describe('Customers Layout test', () => {
   it('renders without crashing', () => {
     shallow(<CustomersLayout />);

@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 
 const LandingPageDesktopInfoCard = ({ children }) => (
-  <div className="hidden md:block">
+  <div id="how-it-works" className="hidden md:block">
     <div
       className="px-10 pt-40 lg:pt-64 bg-cover bg-no-repeat bg-center relative flex justify-center lg:justify-start xl:justify-center"
       style={{

@@ -37,6 +37,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply text-alt-1;
   font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
