@@ -8,7 +8,7 @@ import { MobileMenuDrawer, MobileFooter, Footer } from '@components';
 const CustomersLayout = ({ children, showFooter = true }) => {
   const { pathname, push } = useRouter();
   const [isOpen, setOpen] = useState(false);
-
+  
   return (
     <div className="w-full relative max-w-screen-xl min-h-screen mx-auto">
       <div className="flex  justify-between items-center px-5 md:py-2">
@@ -104,7 +104,7 @@ const CustomersLayout = ({ children, showFooter = true }) => {
           </button>
         </div>
       </div>
-      <MobileMenuDrawer isOpen={isOpen} closeDrawer={() => setOpen(false)} />
+      <MobileMenuDrawer isOpen={open} closeDrawer={() => setOpen(false)} />
       {children}
 
       {showFooter && (
