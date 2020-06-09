@@ -1,0 +1,313 @@
+@tailwind base;
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/graphik/regular/Graphik-Regular.eot');
+  src: url('/fonts/graphik/regular/Graphik-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/graphik/regular/Graphik-Regular.woff') format('woff'),
+    url('/fonts/graphik/regular/Graphik-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/graphik/medium/Graphik-Medium.eot');
+  src: url('/fonts/graphik/medium/Graphik-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/graphik/medium/Graphik-Medium.woff') format('woff'),
+    url('/fonts/graphik/medium/Graphik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/canela/Canela-Regular.eot');
+  src: url('/fonts/canela/Canela-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/canela/Canela-Regular.woff') format('woff'),
+    url('/fonts/canela/Canela-Regular.woff2') format('woff2'),
+    url('/fonts/canela/Canela-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-alt-1;
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Canela';
+  @apply font-light tracking-normal;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 4.375rem;
+}
+
+h2 {
+  @apply text-5xl;
+  line-height: 3.75rem;
+}
+
+h3 {
+  @apply text-4xl;
+  line-height: 2.75rem;
+}
+
+h4 {
+  @apply text-2xl;
+  line-height: 1.875rem;
+}
+
+p {
+  line-height: 1.75rem;
+  @apply font-light tracking-normal;
+}
+
+/* Custom utilities */
+.font-body {
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Canela';
+}
+
+.p-lg {
+  line-height: 2.25rem;
+  @apply text-xl font-light tracking-normal;
+}
+
+.p-sm {
+  line-height: 1.5rem;
+  @apply text-xs font-light tracking-normal;
+}
+
+.btn {
+  line-height: 1.75rem;
+  @apply bg-primary text-alt-3 tracking-normal font-medium;
+}
+
+.btn-alt {
+  line-height: 1.125rem;
+  @apply bg-alt-3 tracking-normal w-full font-medium border border-alt-1;
+}
+
+.btn-lg {
+  @apply btn py-4 px-20;
+}
+
+.btn-sm {
+  @apply btn  py-2 px-10;
+}
+
+.btn-xs {
+  @apply btn py-1 px-6;
+}
+
+.btn-alt-sm {
+  @apply btn-alt py-3 px-10;
+}
+
+.btn-alt-xs {
+  @apply btn-alt py-2 px-6;
+}
+
+.btn-alt-sm:hover,
+.btn-alt-xs:hover {
+  @apply text-alt-3 bg-primary border-primary;
+}
+
+.btn-alt-sm:focus,
+.btn-alt-xs:focus {
+  @apply outline-none shadow-outline;
+}
+
+.field-input .field-input__field:focus ~ .field-input__label,
+.field-input .field-input__field:not(:empty) ~ .field-input__label {
+  transform: translateY(-14px);
+  @apply p-sm bg-alt-3 py-0 px-1 ml-4;
+}
+
+.field-input .field-textarea__field:focus ~ .field-textarea__label,
+.field-input .field-textarea__field:not(:empty) ~ .field-textarea__label {
+  transform: translateY(-22px);
+  @apply p-sm bg-alt-3 py-0 px-1 ml-4;
+}
+
+.field-error {
+  @apply border-primary;
+}
+
+.linear-gradient::after {
+  content: '';
+  @apply absolute inset-0 z-10;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    #000000;
+  mix-blend-mode: multiply;
+}
+
+.landing-page-step--item::before {
+  content: '';
+  @apply absolute h-3 w-3 border border-black rounded-full left-0 mt-2;
+}
+
+.landing-page-step--item:first-child::before {
+  @apply bg-primary border-primary;
+}
+
+.landing-page-step--item:not(:last-child)::after {
+  content: '';
+  @apply absolute border-0 border-l border-black top-0 left-0 mt-5;
+  height: calc(100% - 0.75rem);
+  margin-left: 0.344rem;
+}
+
+.landing-page-grid--item:nth-child(1) {
+  top: -6rem;
+}
+
+.landing-page-grid--item:nth-child(2) {
+  top: calc(18rem - 6rem);
+}
+
+.landing-page-grid--item:nth-child(3) {
+  top: calc((18rem * 2) - 6rem);
+}
+
+.landing-page-grid--item:nth-child(4) {
+  top: calc(-6rem * 2);
+  left: calc(14rem - 1px);
+}
+
+.landing-page-grid--item:nth-child(5) {
+  top: calc(18rem - (6rem * 2));
+  left: calc(14rem - 1px);
+}
+
+.landing-page-grid--item:nth-child(6) {
+  top: calc((18rem * 3) - 6rem);
+}
+
+.active-tab::after {
+  content: '';
+  bottom: -7px;
+  border-top-width: 3px;
+  @apply absolute w-full left-0 border-primary;
+}
+
+.customer-tabs .active-tab::after {
+  content: '';
+  bottom: -2px;
+  border-top-width: 1px;
+}
+
+.avatar-cam-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#wizard-form::before {
+  content: '';
+  top: 50%;
+  transform: translateY(-50%);
+  @apply absolute w-full border-t border-alt-2;
+}
+
+#wizard-form li > button {
+  padding-top: 0.1rem;
+}
+
+.wizard-slider {
+  max-width: calc(100vw - 1.5rem);
+}
+
+.measurement-slider .slick-prev:before,
+.measurement-slider .slick-next:before {
+  content: none;
+}
+
+.measurement-slider .slick-disabled svg {
+  @apply opacity-25;
+}
+
+/* Range Slider Modifications */
+.input-range__track {
+  height: 0.2rem;
+}
+
+.input-range__slider {
+  @apply bg-alt-1 border-alt-1;
+}
+
+.input-range__track--active {
+  @apply bg-alt-1;
+}
+
+.input-range__label {
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+}
+
+.input-range__label--value {
+  top: -2rem;
+  @apply text-secondary font-light mb-2;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+  @apply text-alt-1 text-base;
+}
+
+.input-range__label--min {
+  @apply ml-4;
+}
+
+.input-range__label--max {
+  @apply mr-6;
+}
+
+/* Media Queries */
+@screen md {
+  .w-360 {
+    width: 360px;
+  }
+
+  .avatar-cam-center {
+    @apply left-0;
+    transform: translate(-50%, 0);
+  }
+
+  .customer-tabs .active-tab::after {
+    content: none;
+  }
+
+  .wizard-slider {
+    max-width: calc(100vw - 14.5rem);
+  }
+
+  .measurement-slider {
+    max-width: calc(100vw - 15rem);
+  }
+
+  .measurement-slider .slick-slide {
+    width: 16rem !important;
+  }
+}
