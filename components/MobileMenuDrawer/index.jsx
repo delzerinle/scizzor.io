@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
+  const { pathname, push } = useRouter();
   const wrapperClass = isOpen ? 'fixed' : 'hidden';
 
   return (
@@ -24,12 +27,25 @@ const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
             />
           </svg>
         </button>
-        <img className="h-16" src="/images/logo.png" alt="logo"></img>
+
+        <Link href="/">
+          <a>
+            <img className="h-16" src="/images/logo.png" alt="logo" />
+          </a>
+        </Link>
       </div>
       <div className="px-5 flex-1 pt-6">
         <ul className="text-secondary font-light text-sm">
-          <li className="text-alt-1 mb-4 flex justify-between items-center hover:text-alt-1">
-            <a href="#">Home</a>
+          <li
+            className={
+              pathname === '/'
+                ? 'text-alt-1 mb-4 flex justify-between items-center hover:text-alt-1'
+                : 'mb-4 flex justify-between items-center hover:text-alt-1'
+            }
+          >
+            <Link href="/">
+              <a>Home</a>
+            </Link>
             <svg
               className="h-4 w-4 fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +65,7 @@ const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
           </li>
 
           <li className="mb-4 flex justify-between items-center hover:text-alt-1">
-            <a href="#">How it Works</a>
+            <a href="/#how-it-works-m">How it Works</a>
             <svg
               className="h-4 w-4 fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +75,7 @@ const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
           </li>
 
           <li className="flex justify-between items-center hover:text-alt-1">
-            <a href="#">Join as a Brand</a>
+            <a href="/#join-as-a-brand">Join as a Brand</a>
             <svg
               className="h-4 w-4 fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +85,11 @@ const MobileMenuDrawer = ({ isOpen, closeDrawer }) => {
           </li>
         </ul>
       </div>
-      <button className="bg-tertiary px-5 py-2 flex justify-between items-center focus:outline-none text-secondary text-sm">
+      <button
+        type="button"
+        onClick={() => push('/customers/sign-in')}
+        className="bg-tertiary px-5 py-2 flex justify-between items-center focus:outline-none text-secondary text-sm"
+      >
         <p>Account & Log in</p>
 
         <svg

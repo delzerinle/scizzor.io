@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputTextArea tests input field snapshot 1`] = `
+<div
+  className="border w-full border-alt-2 field-input mb-10 field-error"
+>
+  <div
+    className="px-4 py-2 relative"
+  >
+    <Field
+      className="w-full  field-textarea__field focus:outline-none relative z-10 bg-transparent font-light text-sm"
+      component="textarea"
+      id="test"
+      name="test"
+      rows={10}
+    />
+    <label
+      className="text-secondary font-light tracking-normal absolute px-4 left-0 transition-transform duration-200 ease-in z-0 field-textarea__label text-sm pt-1"
+      htmlFor="test"
+    >
+      test
+    </label>
+    <FormikConnect(ErrorMessageImpl)
+      className="p-sm absolute text-secondary"
+      component="p"
+      name="test"
+    />
+  </div>
+</div>
+`;

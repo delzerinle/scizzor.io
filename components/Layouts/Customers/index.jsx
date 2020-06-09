@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
+
 import { MobileMenuDrawer, MobileFooter, Footer } from '@components';
 
-const CustomersLayout = ({ children }) => {
-  const [open, setOpen] = useState(false);
+const CustomersLayout = ({ children, showFooter = true }) => {
+  const { pathname, push } = useRouter();
+  const [isOpen, setOpen] = useState(false);
+  
   return (
     <div className="w-full relative max-w-screen-xl min-h-screen mx-auto">
       <div className="flex  justify-between items-center px-5 md:py-2">
@@ -23,34 +29,43 @@ const CustomersLayout = ({ children }) => {
             </svg>
           </button>
 
-          <img
-            className="h-16 hidden md:block"
-            src="/images/logo.png"
-            alt="logo"
-          />
+          <Link href="/">
+            <a>
+              <img
+                className="h-16 hidden md:block"
+                src="/images/logo.png"
+                alt="logo"
+              />
+            </a>
+          </Link>
         </div>
 
         <div className="w-1/2">
-          <img
-            className="h-16 mx-auto md:hidden"
-            src="/images/logo.png"
-            alt="logo"
-          />
-
+          <Link href="/">
+            <a>
+              <img
+                className="h-16 mx-auto md:hidden"
+                src="/images/logo.png"
+                alt="logo"
+              />
+            </a>
+          </Link>
           <ul className="hidden md:flex text-secondary font-light text-sm">
             <li className="mr-6">
-              <a className="font-medium text-alt-1" href="#">
-                Home
-              </a>
+              <Link href="/">
+                <a className={pathname === '/' ? 'font-medium text-alt-1' : ''}>
+                  Home
+                </a>
+              </Link>
             </li>
             <li className="mr-6">
               <a href="#">Shop</a>
             </li>
             <li className="mr-6">
-              <a href="#">How it works</a>
+              <a href="/#how-it-works">How it works</a>
             </li>
             <li>
-              <a href="#">Join As A Brand</a>
+              <a href="/#join-as-a-brand">Join As A Brand</a>
             </li>
           </ul>
         </div>
@@ -80,7 +95,11 @@ const CustomersLayout = ({ children }) => {
             </svg>
           </button>
 
-          <button className="hidden md:block bg-alt-1 text-alt-3 text-sm px-6 py-2 ml-6 focus:outline-none focus:bg-primary hover:bg-primary ease-linear duration-300 transition-colors">
+          <button
+            type="button"
+            onClick={() => push('/customers/sign-in')}
+            className="hidden md:block bg-alt-1 text-alt-3 text-sm px-6 py-2 ml-6 focus:outline-none focus:bg-primary hover:bg-primary ease-linear duration-300 transition-colors"
+          >
             Sign In
           </button>
         </div>
@@ -88,30 +107,38 @@ const CustomersLayout = ({ children }) => {
       <MobileMenuDrawer isOpen={open} closeDrawer={() => setOpen(false)} />
       {children}
 
-      <MobileFooter />
-      <Footer />
-      <div className="bg-alt-2 px-5 py-4 text-center text-xs md:flex md:justify-between md:items-center">
-        <p className="flex justify-center items-center md:order-2">
-          <a href="#">Terms & Conditions</a>
-          <span className="ml-2 mr-1 md:hidden">
-            <svg
-              className="w-1 h-6 stroke-current"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M1 1v20" strokeWidth=".5" strokeLinecap="round" />
-            </svg>
-          </span>
-          <a className="md:ml-6" href="#">
-            Privacy Policy
-          </a>
-        </p>
-        <p className="leading-snug md:order-1">
-          &copy; 2019 The Scizzor Group Inc. All rights reserved
-        </p>
-      </div>
+      {showFooter && (
+        <>
+          <MobileFooter />
+          <Footer />
+          <div className="bg-alt-2 px-5 py-4 text-center text-xs md:flex md:justify-between md:items-center">
+            <p className="flex justify-center items-center md:order-2">
+              <a href="#">Terms & Conditions</a>
+              <span className="ml-2 mr-1 md:hidden">
+                <svg
+                  className="w-1 h-6 stroke-current"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1 1v20" strokeWidth=".5" strokeLinecap="round" />
+                </svg>
+              </span>
+              <a className="md:ml-6" href="#">
+                Privacy Policy
+              </a>
+            </p>
+            <p className="leading-snug md:order-1">
+              &copy; 2019 The Scizzor Group Inc. All rights reserved
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
+};
+
+CustomersLayout.propTypes = {
+  showFooter: PropTypes.bool,
 };
 
 export default CustomersLayout;

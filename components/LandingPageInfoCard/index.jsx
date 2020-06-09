@@ -1,5 +1,6 @@
 const LandingPageInfoCard = () => (
   <div
+    id="how-it-works-m"
     className="px-5 bg-cover bg-no-repeat bg-center pt-32 pb-3 relative linear-gradient md:hidden"
     style={{
       backgroundImage: 'url(/images/how-scizzor-works.jpg)',

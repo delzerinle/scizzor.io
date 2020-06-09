@@ -3,6 +3,15 @@ import { shallow } from 'enzyme';
 
 import MobileMenuDrawer from './index';
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      pathname: '/',
+      push: () => null,
+    };
+  },
+}));
+
 describe('Mobile menu drawer tests', () => {
   it('renders without crashing', () => {
     shallow(<MobileMenuDrawer isOpen={true} closeDrawer={() => jest.func()} />);

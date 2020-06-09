@@ -21,6 +21,7 @@ module.exports = {
       maxWidth: theme => {
         return {
           'screen-xl': theme('screens.xl'),
+          screen: '100vw',
         };
       },
       spacing: {
@@ -33,6 +34,7 @@ module.exports = {
       },
       boxShadow: {
         outline: '0 0 0 3px rgba(192, 149, 88, 0.5)',
+        'custom-light': '0px 1px 5px rgba(0, 0, 0, 0.1)',
         custom: '0px 4px 16px rgba(0, 0, 0, 0.1)',
       },
     },

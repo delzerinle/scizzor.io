@@ -37,6 +37,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply text-alt-1;
   font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
@@ -114,21 +118,37 @@ p {
   @apply btn  py-2 px-10;
 }
 
+.btn-xs {
+  @apply btn py-1 px-6;
+}
+
 .btn-alt-sm {
   @apply btn-alt py-3 px-10;
 }
 
-.btn-alt-sm:hover {
+.btn-alt-xs {
+  @apply btn-alt py-2 px-6;
+}
+
+.btn-alt-sm:hover,
+.btn-alt-xs:hover {
   @apply text-alt-3 bg-primary border-primary;
 }
 
-.btn-alt-sm:focus {
+.btn-alt-sm:focus,
+.btn-alt-xs:focus {
   @apply outline-none shadow-outline;
 }
 
 .field-input .field-input__field:focus ~ .field-input__label,
-.field-input .field-input__field:not([value='']) ~ .field-input__label {
+.field-input .field-input__field:not(:empty) ~ .field-input__label {
   transform: translateY(-14px);
+  @apply p-sm bg-alt-3 py-0 px-1 ml-4;
+}
+
+.field-input .field-textarea__field:focus ~ .field-textarea__label,
+.field-input .field-textarea__field:not(:empty) ~ .field-textarea__label {
+  transform: translateY(-22px);
   @apply p-sm bg-alt-3 py-0 px-1 ml-4;
 }
 
@@ -184,12 +204,110 @@ p {
 
 .landing-page-grid--item:nth-child(6) {
   top: calc((18rem * 3) - 6rem);
-  
+}
+
+.active-tab::after {
+  content: '';
+  bottom: -7px;
+  border-top-width: 3px;
+  @apply absolute w-full left-0 border-primary;
+}
+
+.customer-tabs .active-tab::after {
+  content: '';
+  bottom: -2px;
+  border-top-width: 1px;
+}
+
+.avatar-cam-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#wizard-form::before {
+  content: '';
+  top: 50%;
+  transform: translateY(-50%);
+  @apply absolute w-full border-t border-alt-2;
+}
+
+#wizard-form li > button {
+  padding-top: 0.1rem;
+}
+
+.wizard-slider {
+  max-width: calc(100vw - 1.5rem);
+}
+
+.measurement-slider .slick-prev:before,
+.measurement-slider .slick-next:before {
+  content: none;
+}
+
+.measurement-slider .slick-disabled svg {
+  @apply opacity-25;
+}
+
+/* Range Slider Modifications */
+.input-range__track {
+  height: 0.2rem;
+}
+
+.input-range__slider {
+  @apply bg-alt-1 border-alt-1;
+}
+
+.input-range__track--active {
+  @apply bg-alt-1;
+}
+
+.input-range__label {
+  font-family: 'Graphik', '"Helvetica Neue"', sans-serif;
+}
+
+.input-range__label--value {
+  top: -2rem;
+  @apply text-secondary font-light mb-2;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+  @apply text-alt-1 text-base;
+}
+
+.input-range__label--min {
+  @apply ml-4;
+}
+
+.input-range__label--max {
+  @apply mr-6;
 }
 
 /* Media Queries */
 @screen md {
   .w-360 {
     width: 360px;
+  }
+
+  .avatar-cam-center {
+    @apply left-0;
+    transform: translate(-50%, 0);
+  }
+
+  .customer-tabs .active-tab::after {
+    content: none;
+  }
+
+  .wizard-slider {
+    max-width: calc(100vw - 14.5rem);
+  }
+
+  .measurement-slider {
+    max-width: calc(100vw - 15rem);
+  }
+
+  .measurement-slider .slick-slide {
+    width: 16rem !important;
   }
 }
