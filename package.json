@@ -15,7 +15,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "formik": "^2.1.2",
-    "next": "^9.4.4",
+    "next": "^11.1.0",
     "prop-types": "^15.7.2",
     "raf": "^3.4.1",
     "react": "^16.7.0",
